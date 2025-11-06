@@ -1,0 +1,32 @@
+backend:
+  name: github
+  repo: keamarg/AiA
+  branch: main
+  base_url: https://aia.vercel.app
+
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+publish_mode: editorial_workflow
+
+collections:
+  - name: pages
+    label: Pages
+    files:
+      - file: "src/index.md"
+        label: Home
+        name: home
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Body, name: body, widget: markdown }
+
+  - name: posts
+    label: Blog Posts
+    folder: "src/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    path: "{{slug}}.md"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Body, name: body, widget: markdown }
+      - { label: Featured Image, name: image, widget: image, required: false }
