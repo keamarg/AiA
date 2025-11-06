@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "label": "Om projektet",
+      "url": "/om-projektet/",
+      "children": [
+        { "label": "Værdigrundlag", "url": "/om-projektet/vaerdigrundlag/" },
+        {
+          "label": "Projektbeskrivelse",
+          "url": "/om-projektet/projektbeskrivelse/"
+        },
+        { "label": "Arbejdspakker", "url": "/om-projektet/arbejdspakker/" },
+        { "label": "Samarbejder", "url": "/om-projektet/samarbejder/" },
+        { "label": "Kontakt", "url": "/om-projektet/kontakt/" }
+      ]
+    },
+    {
+      "label": "AiA Forløb",
+      "url": "/aia-forlob/",
+      "children": [
+        { "label": "Tidligere", "url": "/aia-forlob/tidligere/" },
+        { "label": "Igangværende", "url": "/aia-forlob/igangvaerende/" }
+      ]
+    },
+    {
+      "label": "Begreber og fokusområder",
+      "url": "/begreber-og-fokusomraader/",
+      "children": [
+        {
+          "label": "Jailbreaking",
+          "url": "/begreber-og-fokusomraader/jailbreaking/"
+        },
+        {
+          "label": "Provotyping",
+          "url": "/begreber-og-fokusomraader/provotyping/"
+        },
+        {
+          "label": "Vibecoding",
+          "url": "/begreber-og-fokusomraader/vibecoding/"
+        },
+        { "label": "Becoming", "url": "/begreber-og-fokusomraader/becoming/" },
+        {
+          "label": "Artefakter",
+          "url": "/begreber-og-fokusomraader/artefakter/"
+        }
+      ]
+    },
+    {
+      "label": "Produkter",
+      "url": "/produkter/",
+      "children": [
+        { "label": "Publikationer", "url": "/produkter/publikationer/" },
+        { "label": "Research tools", "url": "/produkter/research-tools/" },
+        { "label": "Events", "url": "/produkter/events/" }
+      ]
+    }
+  ]
+}

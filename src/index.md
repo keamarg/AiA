@@ -1,8 +1,10 @@
 ---
 layout: layout.njk
-title: Home
+title: AiA
+isHome: true
+hero_heading: AiA
+hero_text: Kunstig intelligens i anvendelse – udforskning, værktøjer og praksis.
+hero_image: /assets/uploads/hero.jpg
 ---
 
-# Welcome
-
-This page will be editable via **Decap** at `/admin`.
+Velkommen til AiA.

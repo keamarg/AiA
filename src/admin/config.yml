@@ -8,18 +8,91 @@ backend:
 media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
 publish_mode: editorial_workflow
+local_backend: true
 
 collections:
-  - name: pages
-    label: Pages
+  # Home page
+  - name: home
+    label: Home
     files:
       - file: "src/index.md"
-        label: Home
-        name: home
+        label: Landing Page
+        name: landing
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Body, name: body, widget: markdown }
+          - { label: Is Home, name: isHome, widget: hidden, default: true }
+          - {
+              label: Hero Heading,
+              name: hero_heading,
+              widget: string,
+              required: false,
+            }
+          - { label: Hero Text, name: hero_text, widget: text, required: false }
+          - {
+              label: Hero Image,
+              name: hero_image,
+              widget: image,
+              required: false,
+            }
+          - { label: Body, name: body, widget: markdown, required: false }
 
+  # Category: Om projektet
+  - name: om_projektet
+    label: Om projektet
+    folder: "src/om-projektet"
+    create: true
+    slug: "{{slug}}"
+    path: "{{slug}}.md"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Layout, name: layout, widget: hidden, default: "layout.njk" }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Intro, name: intro, widget: text, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  # Category: AiA Forløb
+  - name: aia_forlob
+    label: AiA Forløb
+    folder: "src/aia-forlob"
+    create: true
+    slug: "{{slug}}"
+    path: "{{slug}}.md"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Layout, name: layout, widget: hidden, default: "layout.njk" }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Intro, name: intro, widget: text, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  # Category: Begreber og fokusområder
+  - name: begreber_fokus
+    label: Begreber og fokusområder
+    folder: "src/begreber-og-fokusomraader"
+    create: true
+    slug: "{{slug}}"
+    path: "{{slug}}.md"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Layout, name: layout, widget: hidden, default: "layout.njk" }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Intro, name: intro, widget: text, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  # Category: Produkter
+  - name: produkter
+    label: Produkter
+    folder: "src/produkter"
+    create: true
+    slug: "{{slug}}"
+    path: "{{slug}}.md"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Layout, name: layout, widget: hidden, default: "layout.njk" }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Intro, name: intro, widget: text, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  # Blog posts
   - name: posts
     label: Blog Posts
     folder: "src/posts"
@@ -31,3 +104,32 @@ collections:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Body, name: body, widget: markdown }
       - { label: Featured Image, name: image, widget: image, required: false }
+      - { label: Tags, name: tags, widget: hidden, default: ["post"] }
+
+  # Settings
+  - name: settings
+    label: Settings
+    files:
+      - file: "src/_data/navigation.json"
+        label: Navigation
+        name: navigation
+        fields:
+          - label: Items
+            name: items
+            widget: list
+            collapsed: false
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+              - label: Children
+                name: children
+                widget: list
+                required: false
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: URL, name: url, widget: string }
+      - file: "src/_data/site.json"
+        label: Site
+        name: site
+        fields:
+          - { label: Title, name: title, widget: string }
