@@ -12,9 +12,9 @@
 </head>
 <body>
   <nav>
-    <a href="/">Home</a>
-    <a href="/posts/">Blog</a>
-    <a href="/admin/">Admin</a>
+    <a href="{{ '/' | url }}">Home</a>
+    <a href="{{ '/posts/' | url }}">Blog</a>
+    <a href="{{ '/admin/' | url }}">Admin</a>
   </nav>
   <main>
     {{ content | safe }}
