@@ -2,7 +2,7 @@ backend:
   name: github
   repo: keamarg/AiA
   branch: main
-  base_url: https://netlify-cms-github-oauth-provider.vercel.app
+  base_url: https://netlify-cms-github-oauth-provider-mu.vercel.app
 
 media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
