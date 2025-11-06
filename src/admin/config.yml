@@ -4,6 +4,7 @@ backend:
   branch: main
   base_url: https://netlify-cms-github-oauth-provider-mu.vercel.app
   auth_endpoint: auth
+  display_url: https://keamarg.github.io/AiA
 
 media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
