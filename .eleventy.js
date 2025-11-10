@@ -2,6 +2,15 @@ export default function (eleventyConfig) {
   // Copy assets straight through (Decap uploads live here)
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
+  // Copy images that live next to content files (legacy/manual content)
+  eleventyConfig.addPassthroughCopy("src/**/*.{png,jpg,jpeg,gif,webp,svg}");
+
+  // Section collections (auto-list pages under section indexes)
+  eleventyConfig.addCollection("om_projektet", (collectionApi) => {
+    return collectionApi
+      .getFilteredByGlob("src/om-projektet/*.md")
+      .filter((item) => item.fileSlug !== "index");
+  });
 
   return {
     dir: { input: "src", includes: "_includes", output: "_site" },

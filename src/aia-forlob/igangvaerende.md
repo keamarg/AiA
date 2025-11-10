@@ -1,8 +1,8 @@
 ---
-layout: layout.njk
 title: Igangværende forløb
-image:
-intro:
+layout: layout.njk
+image: img_9006-large.jpeg
+intro: null
 ---
 
 Indhold kommer snart.

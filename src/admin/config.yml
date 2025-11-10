@@ -33,9 +33,10 @@ site_url: https://keamarg.github.io/AiA
 
 media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
-publish_mode: editorial_workflow
-local_backend: false
-#local_backend: true
+publish_mode: simple
+#publish_mode: editorial_workflow
+#local_backend: false
+local_backend: true
 
 collections:
   # Home page
@@ -72,9 +73,116 @@ collections:
     path: "{{slug}}.md"
     fields:
       - { label: Title, name: title, widget: string }
-      - { label: Layout, name: layout, widget: hidden, default: "layout.njk" }
+      - label: Layout
+        name: layout
+        widget: select
+        options: ["article.njk", "landing.njk"]
+        default: "article.njk"
       - { label: Image, name: image, widget: image, required: false }
       - { label: Intro, name: intro, widget: text, required: false }
+      - label: Blocks
+        name: blocks
+        widget: list
+        types:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - {
+                  label: Hero Heading,
+                  name: hero_heading,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Hero Text,
+                  name: hero_text,
+                  widget: text,
+                  required: false,
+                }
+              - {
+                  label: Hero Image,
+                  name: hero_image,
+                  widget: image,
+                  required: false,
+                }
+          - label: Rich text
+            name: richtext
+            widget: object
+            fields:
+              - { label: Content, name: content, widget: markdown }
+          - label: Image
+            name: image_block
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image }
+              - {
+                  label: Caption,
+                  name: caption,
+                  widget: string,
+                  required: false,
+                }
+          - label: Video
+            name: video
+            widget: object
+            fields:
+              - {
+                  label: Video URL (YouTube/Vimeo/file),
+                  name: url,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: Upload Video (mp4),
+                  name: file,
+                  widget: file,
+                  required: false,
+                }
+              - {
+                  label: Poster Image,
+                  name: poster,
+                  widget: image,
+                  required: false,
+                }
+              - {
+                  label: Caption,
+                  name: caption,
+                  widget: string,
+                  required: false,
+                }
+          - label: Gallery
+            name: gallery
+            widget: object
+            fields:
+              - label: Images
+                name: images
+                widget: list
+                fields:
+                  - { label: Image, name: image, widget: image }
+                  - {
+                      label: Caption,
+                      name: caption,
+                      widget: string,
+                      required: false,
+                    }
+          - label: Two column
+            name: two_column
+            widget: object
+            fields:
+              - { label: Left, name: left, widget: markdown }
+              - { label: Right, name: right, widget: markdown }
+          - label: CTA Button
+            name: cta
+            widget: object
+            fields:
+              - { label: Text, name: text, widget: string }
+              - { label: URL, name: url, widget: string }
+              - {
+                  label: Label (optional),
+                  name: label,
+                  widget: string,
+                  required: false,
+                }
       - { label: Body, name: body, widget: markdown, required: false }
 
   # Category: AiA Forløb
@@ -86,9 +194,145 @@ collections:
     path: "{{slug}}.md"
     fields:
       - { label: Title, name: title, widget: string }
-      - { label: Layout, name: layout, widget: hidden, default: "layout.njk" }
+      - label: Layout
+        name: layout
+        widget: select
+        options: ["article.njk", "landing.njk"]
+        default: "article.njk"
       - { label: Image, name: image, widget: image, required: false }
       - { label: Intro, name: intro, widget: text, required: false }
+      - label: Blocks
+        name: blocks
+        widget: list
+        types:
+          - {
+              label: Hero,
+              name: hero,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Hero Heading,
+                    name: hero_heading,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Hero Text,
+                    name: hero_text,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Hero Image,
+                    name: hero_image,
+                    widget: image,
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: Rich text,
+              name: richtext,
+              widget: object,
+              fields: [{ label: Content, name: content, widget: markdown }],
+            }
+          - {
+              label: Image,
+              name: image_block,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  {
+                    label: Caption,
+                    name: caption,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: Video,
+              name: video,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Video URL (YouTube/Vimeo/file),
+                    name: url,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Upload Video (mp4),
+                    name: file,
+                    widget: file,
+                    required: false,
+                  },
+                  {
+                    label: Poster Image,
+                    name: poster,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: Caption,
+                    name: caption,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: Gallery,
+              name: gallery,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Images,
+                    name: images,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        {
+                          label: Caption,
+                          name: caption,
+                          widget: string,
+                          required: false,
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Two column,
+              name: two_column,
+              widget: object,
+              fields:
+                [
+                  { label: Left, name: left, widget: markdown },
+                  { label: Right, name: right, widget: markdown },
+                ],
+            }
+          - {
+              label: CTA Button,
+              name: cta,
+              widget: object,
+              fields:
+                [
+                  { label: Text, name: text, widget: string },
+                  { label: URL, name: url, widget: string },
+                  {
+                    label: Label (optional),
+                    name: label,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
       - { label: Body, name: body, widget: markdown, required: false }
 
   # Category: Begreber og fokusområder
@@ -100,9 +344,145 @@ collections:
     path: "{{slug}}.md"
     fields:
       - { label: Title, name: title, widget: string }
-      - { label: Layout, name: layout, widget: hidden, default: "layout.njk" }
+      - label: Layout
+        name: layout
+        widget: select
+        options: ["article.njk", "landing.njk"]
+        default: "article.njk"
       - { label: Image, name: image, widget: image, required: false }
       - { label: Intro, name: intro, widget: text, required: false }
+      - label: Blocks
+        name: blocks
+        widget: list
+        types:
+          - {
+              label: Hero,
+              name: hero,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Hero Heading,
+                    name: hero_heading,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Hero Text,
+                    name: hero_text,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Hero Image,
+                    name: hero_image,
+                    widget: image,
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: Rich text,
+              name: richtext,
+              widget: object,
+              fields: [{ label: Content, name: content, widget: markdown }],
+            }
+          - {
+              label: Image,
+              name: image_block,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  {
+                    label: Caption,
+                    name: caption,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: Video,
+              name: video,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Video URL (YouTube/Vimeo/file),
+                    name: url,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Upload Video (mp4),
+                    name: file,
+                    widget: file,
+                    required: false,
+                  },
+                  {
+                    label: Poster Image,
+                    name: poster,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: Caption,
+                    name: caption,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: Gallery,
+              name: gallery,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Images,
+                    name: images,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        {
+                          label: Caption,
+                          name: caption,
+                          widget: string,
+                          required: false,
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Two column,
+              name: two_column,
+              widget: object,
+              fields:
+                [
+                  { label: Left, name: left, widget: markdown },
+                  { label: Right, name: right, widget: markdown },
+                ],
+            }
+          - {
+              label: CTA Button,
+              name: cta,
+              widget: object,
+              fields:
+                [
+                  { label: Text, name: text, widget: string },
+                  { label: URL, name: url, widget: string },
+                  {
+                    label: Label (optional),
+                    name: label,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
       - { label: Body, name: body, widget: markdown, required: false }
 
   # Category: Produkter
@@ -114,9 +494,145 @@ collections:
     path: "{{slug}}.md"
     fields:
       - { label: Title, name: title, widget: string }
-      - { label: Layout, name: layout, widget: hidden, default: "layout.njk" }
+      - label: Layout
+        name: layout
+        widget: select
+        options: ["article.njk", "landing.njk"]
+        default: "article.njk"
       - { label: Image, name: image, widget: image, required: false }
       - { label: Intro, name: intro, widget: text, required: false }
+      - label: Blocks
+        name: blocks
+        widget: list
+        types:
+          - {
+              label: Hero,
+              name: hero,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Hero Heading,
+                    name: hero_heading,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Hero Text,
+                    name: hero_text,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Hero Image,
+                    name: hero_image,
+                    widget: image,
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: Rich text,
+              name: richtext,
+              widget: object,
+              fields: [{ label: Content, name: content, widget: markdown }],
+            }
+          - {
+              label: Image,
+              name: image_block,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  {
+                    label: Caption,
+                    name: caption,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: Video,
+              name: video,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Video URL (YouTube/Vimeo/file),
+                    name: url,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Upload Video (mp4),
+                    name: file,
+                    widget: file,
+                    required: false,
+                  },
+                  {
+                    label: Poster Image,
+                    name: poster,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: Caption,
+                    name: caption,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: Gallery,
+              name: gallery,
+              widget: object,
+              fields:
+                [
+                  {
+                    label: Images,
+                    name: images,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        {
+                          label: Caption,
+                          name: caption,
+                          widget: string,
+                          required: false,
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Two column,
+              name: two_column,
+              widget: object,
+              fields:
+                [
+                  { label: Left, name: left, widget: markdown },
+                  { label: Right, name: right, widget: markdown },
+                ],
+            }
+          - {
+              label: CTA Button,
+              name: cta,
+              widget: object,
+              fields:
+                [
+                  { label: Text, name: text, widget: string },
+                  { label: URL, name: url, widget: string },
+                  {
+                    label: Label (optional),
+                    name: label,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
       - { label: Body, name: body, widget: markdown, required: false }
 
   # Blog posts

@@ -1,8 +1,8 @@
 ---
-layout: layout.njk
 title: Kontakt
-image:
-intro:
+layout: layout.njk
+image: aia_3.jpeg
+intro: null
 ---
 
 Indhold kommer snart.
