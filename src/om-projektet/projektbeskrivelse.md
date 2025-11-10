@@ -2,8 +2,10 @@
 title: Projektbeskrivelse
 layout: layout.njk
 image: null
-intro: Projektbeskrivelse
+intro: ""
 ---
+# Om projektet
+
 Forskningsprojektet, AI in Action er EKs bidrag ind i AI-Kompetencepagten, en national indsats der sigter mod at opkvalificere 1 million danskere i AI-kompetencer over tre år. AI-Kompetencepagten adresserer det massive transformative potentiale, som AI medfører på tværs af brancher og jobs, og skaber en ramme for udvikling og implementering af anvendelige AI-kompetencer i både private virksomheder og offentlige institutioner. AI in Action er en del af denne indsats og har til formål at udvikle ny viden om, hvordan anvendelige AI-kompetencer skabes og styrkes i praksis på en ansvarlig, meningsfuld og bæredygtig måde.
 
 Der eksisterer allerede en omfattende og værdifuld forskning i teknologiske aspekter af kunstig intelligens, herunder udvikling af modeller, algoritmer og infrastruktur. Denne forskning har været afgørende for den hurtige udvikling af AI som felt. Samtidig er der et voksende behov for viden om, hvordan AI påvirker faglighed, dømmekraft og arbejdets mening ude i de små og mellemstore virksomheder - og hvordan medarbejdere her kan udvikle kompetencer til at forstå, vurdere og anvende teknologien ansvarligt. AI in Action adresserer dette behov ved at fokusere på, hvordan ansvarlig, menneskecentreret og praksisnær AI-brug formes og styrkes i organisationer. Projektet undersøger, hvordan AI møder professionelle praksisser, og hvordan medarbejdere opbygger meningsfulde kompetencer i mødet med teknologien. Denne tilgang er særligt relevant i lyset af EU’s AI Act. Her er Artikel 4 central, da den forpligter virksomheder, der anvender AI-systemer, til aktivt at sikre, at deres medarbejdere har de nødvendige færdigheder til at forstå og anvende teknologien på en hensigtsmæssig og ansvarlig måde. AI in Action bidrager med ny viden, der understøtter SMV-medarbejderes muligheder for at udvikle AI-kompetencer med udgangspunkt i en ansvarlig og bæredygtig AI-anvendelse i en nordisk og europæisk kontekst.
