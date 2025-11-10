@@ -6,11 +6,14 @@ intro: null
 ---
 # Igangværende forløb
 
-[AiA-forløb med fokus på softwareudviklere](##AiA-forløb-med-fokus-på-softwareudviklere)
+[AiA-forløb med fokus på softwareudviklere](#AiA-forløb-med-fokus-på-softwareudviklere)
 
 [AiA-forløb med fokus på multimediedesignere](##AiA-forløb-med-fokus-på-multimediedesignere)
-<br><br><br><br>
-## AiA-forløb med fokus på softwareudviklere
+
+[](##AiA-forløb-med-fokus-på-multimediedesignere)
+<br><br><br>
+
+# AiA-forløb med fokus på softwareudviklere
 
 Dette AiA-forløb undersøger, hvordan softwareudviklere tilegner sig og integrerer generativ AI i deres professionelle praksis – fra de første eksperimenter til teknologien bliver en naturlig del af udviklingsarbejdet. 
 
