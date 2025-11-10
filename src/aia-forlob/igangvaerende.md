@@ -6,11 +6,10 @@ intro: null
 ---
 # Igangværende forløb
 
-[AiA-forløb med fokus på softwareudviklere](#AiA-forløb-med-fokus-på-softwareudviklere)
+[AiA-forløb med fokus på softwareudviklere](#aia-forløb-med-fokus-på-softwareudviklere)
 
-[AiA-forløb med fokus på multimediedesignere](##AiA-forløb-med-fokus-på-multimediedesignere)
+[AiA-forløb med fokus på multimediedesignere](#aia-forløb-med-fokus-på-multimediedesignere)
 
-[](##AiA-forløb-med-fokus-på-multimediedesignere)
 <br><br><br>
 
 # AiA-forløb med fokus på softwareudviklere
