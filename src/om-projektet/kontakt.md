@@ -1,16 +1,14 @@
 ---
 title: Kontakt
 layout: article.njk
-image: /assets/uploads/aia_3.jpeg
+image: ""
 intro: null
 ---
-Projektleder: 
+**Projektleder**
 
 Morten Boesen (mobo@ek.dk)
 
-
-
-Projektdeltagere:
+**Projektdeltagere**:
 
 Sarah O'Neill (saro@ek.dk)
 
