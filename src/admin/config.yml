@@ -34,7 +34,8 @@ site_url: https://keamarg.github.io/AiA
 media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
 publish_mode: editorial_workflow
-local_backend: true
+local_backend: false
+#local_backend: true
 
 collections:
   # Home page
