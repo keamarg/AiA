@@ -1,6 +1,6 @@
 ---
 layout: layout.njk
-title: AiA - testHeading
+title: AiA - testHeading1
 isHome: true
 hero_heading: AiA - test
 hero_text: Kunstig intelligens i anvendelse – udforskning, værktøjer og praksis.
