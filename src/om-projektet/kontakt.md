@@ -1,10 +1,17 @@
 ---
 title: Kontakt
-layout: layout.njk
+layout: article.njk
 image: /assets/uploads/aia_3.jpeg
 intro: null
 ---
+Projektleder: 
 
-Indhold kommer snart.
+Morten Boesen (mobo@ek.dk)
 
 
+
+Projektdeltagere:
+
+Sarah O'Neill (saro@ek.dk)
+
+Martin Gundtoft (marg@ek.dk)
