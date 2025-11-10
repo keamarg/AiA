@@ -2,7 +2,7 @@
 title: Baggrund og formål
 layout: layout.njk
 image: null
-intro: null
+intro: Projektbeskrivelse
 ---
 Forskningsprojektet, AI in Action er EKs bidrag ind i AI-Kompetencepagten, en national indsats der sigter mod at opkvalificere 1 million danskere i AI-kompetencer over tre år. AI-Kompetencepagten adresserer det massive transformative potentiale, som AI medfører på tværs af brancher og jobs, og skaber en ramme for udvikling og implementering af anvendelige AI-kompetencer i både private virksomheder og offentlige institutioner. AI in Action er en del af denne indsats og har til formål at udvikle ny viden om, hvordan anvendelige AI-kompetencer skabes og styrkes i praksis på en ansvarlig, meningsfuld og bæredygtig måde.
 
