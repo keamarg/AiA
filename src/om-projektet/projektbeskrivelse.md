@@ -31,3 +31,17 @@ Vi arbejder abduktivt og eksplorativt. Teorier og begreber udvikles i et løbend
 Denne abduktive tilgang afspejles også i vores arbejde med litteraturen. Den eksisterende forskning læses parallelt med empiriindsamlingen, hvor vi løbende skaber dialog mellem empiri og teori med henblik på at forstå de fænomener, vi observerer, gennem forskellige teoretiske perspektiver. Fokus er først og fremmest rettet mod at forstå virkeligheden bedre, og vi udvælger derfor målrettet den litteratur, de begreber og de teorier, der bedst kan hjælpe os til netop dette. Litteraturen fungerer som en kilde til spor, der kan forfølges i det empiriske felt, mens data samtidig bliver en kilde til spor, der peger tilbage mod forskningslitteraturen. På den måde bliver forholdet mellem teori og empiri cirkulært snarere end lineært.
 
 AiA projektet består af en række AiA-forløb inden for de fagligheder og jobfunktioner som EK uddanner til. Under hvert AiA-forløb er der fem arbejdspakker, der hver undersøger forskellige aspekter af, hvordan AI-kompetencer udvikles i en given praksis. Hver arbejdspakke anvender en specifik dataindsamlingsmetode der bidrager til at skabe en empirisk funderet forståelse af hvordan ansvarlige og anvendelige AI-kompetencer skabes og udvikles i praksis.
+
+<br>
+
+**Forventede forskningsresultater og effekt**
+
+Projektet forventes at bidrage med ny empirisk og teoretisk indsigt i, hvordan AI-kompetencer formes og forhandles i praksis, og samtidig skabe ny viden og konkrete værktøjer, der kan understøtte ansvarlig AI-anvendelse i praksis. På et bredere plan skal projektet styrke den offentlige samtale om ansvarlig teknologi og inspirere organisationer til at arbejde mere eksperimenterende, reflekteret og bæredygtigt med AI.
+
+<br>
+
+**Forventede formidlingsprodukter og aktiviteter**
+
+Projektet vil løbende formidle resultater gennem akademiske papers og præsentationer på nationale og internationale konferencer, samt gennem praksisnær formidling i regi af AI-Kompetencepagten og andre relevante netværk og kanaler rettet mod fagprofessionelle. Derudover planlægges formidling gennem workshops og oplæg for virksomheder. En projektwebsite vil desuden samle analyser, cases og inspirationsmateriale til videre brug i forskning, undervisning og praksis.
+
+Som en integreret del af projektet etableres et AI-eksploratorium, et eksperimentelt univers med forskellige værktøjer og probes, der kan anvendes til at understøtte refleksion og dialog om kritisk og ansvarlig AI-anvendelse. Eksploratoriet vil omfatte både probes udviklet i projektet og udvalgte eksempler på værktøjer og materialer udviklet af andre, som identificeres gennem forskningsprocessen.
