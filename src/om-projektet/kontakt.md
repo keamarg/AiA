@@ -1,7 +1,7 @@
 ---
 title: Kontakt
 layout: layout.njk
-image: aia_1.jpeg
+image: /assets/uploads/aia_3.jpeg
 intro: null
 ---
 
