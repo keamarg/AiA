@@ -1,7 +1,7 @@
 ---
 title: Igangværende forløb
 layout: layout.njk
-image: img_9006-large.jpeg
+image: ""
 intro: null
 ---
 

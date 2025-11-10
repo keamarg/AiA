@@ -1,7 +1,7 @@
 ---
 title: Arbejdspakker
 layout: article.njk
-image: aia_hero.jpeg
+image: /assets/uploads/aia_3.jpeg
 intro: null
 ---
 Indhold kommer snart.

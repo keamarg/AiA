@@ -88,23 +88,11 @@
   </header>
 
   {% set hasBlocks = blocks and (blocks | length) %}
-  {# Robust base directory for assets saved next to the page (#/section/) #}
-  {% set __stem = page.filePathStem %}
-  {% set __stemNoIndex = __stem | replace('/index', '') %}
-  {% if __stemNoIndex != __stem %}
-    {% set __baseDir = __stemNoIndex ~ '/' %}
-  {% else %}
-    {% set __baseDir = (__stem | replace('/' ~ page.fileSlug, '')) ~ '/' %}
-  {% endif %}
+  {% set __baseDir = '/assets/uploads/' %}
   {% if isHome and not hasBlocks %}
     {% set __hero = hero_image %}
-    {% if __hero and __hero[0] != '/' %}
-      {% if '/' in __hero %}
-        {% set __hero = '/' ~ __hero %}
-      {% else %}
-        {% set __hero = __baseDir ~ __hero %}
-      {% endif %}
-    {% endif %}
+    {% if __hero and __hero[0] != '/' %}{% set __hero = __baseDir ~ __hero %}{% endif %}
+    {% if __hero %}{% set __hero = __hero | replace('/AiA/assets/', '/assets/') %}{% endif %}
     <section class="hero" {% if __hero %}style="background-image: url('{{ __hero | url }}');"{% endif %}>
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -119,13 +107,8 @@
       {% for block in blocks %}
         {% if block.type == 'hero' %}
           {% set __himg = block.hero_image %}
-          {% if __himg and __himg[0] != '/' %}
-            {% if '/' in __himg %}
-              {% set __himg = '/' ~ __himg %}
-            {% else %}
-              {% set __himg = __baseDir ~ __himg %}
-            {% endif %}
-          {% endif %}
+          {% if __himg and __himg[0] != '/' %}{% set __himg = __baseDir ~ __himg %}{% endif %}
+          {% if __himg %}{% set __himg = __himg | replace('/AiA/assets/', '/assets/') %}{% endif %}
           <section class="hero" {% if __himg %}style="background-image: url('{{ __himg | url }}');"{% endif %}>
             <div class="hero-overlay"></div>
             <div class="hero-content">
@@ -137,35 +120,20 @@
           {{ block.content | safe }}
         {% elif block.type == 'image_block' and block.image %}
           {% set __bimg = block.image %}
-          {% if __bimg and __bimg[0] != '/' %}
-            {% if '/' in __bimg %}
-              {% set __bimg = '/' ~ __bimg %}
-            {% else %}
-              {% set __bimg = __baseDir ~ __bimg %}
-            {% endif %}
-          {% endif %}
+          {% if __bimg and __bimg[0] != '/' %}{% set __bimg = __baseDir ~ __bimg %}{% endif %}
+          {% if __bimg %}{% set __bimg = __bimg | replace('/AiA/assets/', '/assets/') %}{% endif %}
           <figure class="page-hero">
             <img src="{{ __bimg | url }}" alt="" />
             {% if block.caption %}<figcaption class="intro">{{ block.caption }}</figcaption>{% endif %}
           </figure>
         {% elif block.type == 'video' %}
           {% set __poster = block.poster %}
-          {% if __poster and __poster[0] != '/' %}
-            {% if '/' in __poster %}
-              {% set __poster = '/' ~ __poster %}
-            {% else %}
-              {% set __poster = __baseDir ~ __poster %}
-            {% endif %}
-          {% endif %}
+          {% if __poster and __poster[0] != '/' %}{% set __poster = __baseDir ~ __poster %}{% endif %}
+          {% if __poster %}{% set __poster = __poster | replace('/AiA/assets/', '/assets/') %}{% endif %}
           {% if block.file %}
             {% set __v = block.file %}
-            {% if __v and __v[0] != '/' and not ('://' in __v) %}
-              {% if '/' in __v %}
-                {% set __v = '/' ~ __v %}
-              {% else %}
-                {% set __v = __baseDir ~ __v %}
-              {% endif %}
-            {% endif %}
+            {% if __v and __v[0] != '/' and not ('://' in __v) %}{% set __v = __baseDir ~ __v %}{% endif %}
+            {% if __v %}{% set __v = __v | replace('/AiA/assets/', '/assets/') %}{% endif %}
             <video controls {% if __poster %}poster="{{ __poster | url }}"{% endif %} style="width:100%;border-radius:12px;border:1px solid var(--border);background:var(--card);">
               <source src="{{ __v | url }}" type="video/mp4" />
             </video>
@@ -185,13 +153,8 @@
           <div class="gallery">
             {% for g in block.images %}
               {% set __gimg = g.image %}
-              {% if __gimg and __gimg[0] != '/' %}
-                {% if '/' in __gimg %}
-                  {% set __gimg = '/' ~ __gimg %}
-                {% else %}
-                  {% set __gimg = __baseDir ~ __gimg %}
-                {% endif %}
-              {% endif %}
+              {% if __gimg and __gimg[0] != '/' %}{% set __gimg = __baseDir ~ __gimg %}{% endif %}
+              {% if __gimg %}{% set __gimg = __gimg | replace('/AiA/assets/', '/assets/') %}{% endif %}
               <figure>
                 <img src="{{ __gimg | url }}" alt="" />
                 {% if g.caption %}<figcaption>{{ g.caption }}</figcaption>{% endif %}
@@ -210,13 +173,8 @@
     {% else %}
       {% if not isHome and image %}
         {% set __img = image %}
-        {% if __img and __img[0] != '/' %}
-          {% if '/' in __img %}
-            {% set __img = '/' ~ __img %}
-          {% else %}
-            {% set __img = __baseDir ~ __img %}
-          {% endif %}
-        {% endif %}
+        {% if __img and __img[0] != '/' %}{% set __img = __baseDir ~ __img %}{% endif %}
+        {% if __img %}{% set __img = __img | replace('/AiA/assets/', '/assets/') %}{% endif %}
         <figure class="page-hero"><img src="{{ __img | url }}" alt="" /></figure>
       {% endif %}
       {% if intro %}

@@ -33,6 +33,7 @@ site_url: https://keamarg.github.io/AiA
 
 media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
+media_folder_relative: false
 publish_mode: simple
 #publish_mode: editorial_workflow
 #local_backend: false
@@ -68,6 +69,9 @@ collections:
   - name: om_projektet
     label: Om projektet
     folder: "src/om-projektet"
+    media_folder: "/src/assets/uploads"
+    public_folder: "/assets/uploads"
+    media_folder_relative: false
     create: true
     slug: "{{slug}}"
     path: "{{slug}}.md"
@@ -189,6 +193,9 @@ collections:
   - name: aia_forlob
     label: AiA Forløb
     folder: "src/aia-forlob"
+    media_folder: "/src/assets/uploads"
+    public_folder: "/assets/uploads"
+    media_folder_relative: false
     create: true
     slug: "{{slug}}"
     path: "{{slug}}.md"
@@ -339,6 +346,9 @@ collections:
   - name: begreber_fokus
     label: Begreber og fokusområder
     folder: "src/begreber-og-fokusomraader"
+    media_folder: "/src/assets/uploads"
+    public_folder: "/assets/uploads"
+    media_folder_relative: false
     create: true
     slug: "{{slug}}"
     path: "{{slug}}.md"
@@ -489,6 +499,9 @@ collections:
   - name: produkter
     label: Produkter
     folder: "src/produkter"
+    media_folder: "/src/assets/uploads"
+    public_folder: "/assets/uploads"
+    media_folder_relative: false
     create: true
     slug: "{{slug}}"
     path: "{{slug}}.md"
@@ -639,6 +652,9 @@ collections:
   - name: posts
     label: Blog Posts
     folder: "src/posts"
+    media_folder: "/src/assets/uploads"
+    public_folder: "/assets/uploads"
+    media_folder_relative: false
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     path: "{{slug}}.md"
