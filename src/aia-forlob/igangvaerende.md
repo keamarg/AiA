@@ -4,13 +4,13 @@ layout: article.njk
 image: ""
 intro: null
 ---
-[AiA-forløb med fokus på softwareudviklere](#softwareudviklere)
+[Gå til AiA-forløb med fokus på softwareudviklere](#softwareudviklere)
 
-[AiA-forløb med fokus på multimediedesignere](#multimediedesignere)
+[Gå til AiA-forløb med fokus på multimediedesignere](#multimediedesignere)
 
 <br><br><br>
 
-# <a name="softwareudviklere">AiA-forløb med fokus på softwareudviklere</a> 
+## <a name="softwareudviklere">AiA-forløb med fokus på softwareudviklere</a> 
 
 Dette AiA-forløb undersøger, hvordan softwareudviklere tilegner sig og integrerer generativ AI i deres professionelle praksis – fra de første eksperimenter til teknologien bliver en naturlig del af udviklingsarbejdet. 
 
@@ -52,7 +52,7 @@ Forløbet genererer data, der bidrager til AiA-projektets samlede forskning i, h
 
 <br><br>
 
-## AiA-forløb med fokus på multimediedesignere
+## <a name="multimediedesignere">AiA-forløb med fokus på multimediedesignere</a> 
 
 Dette AiA-forløb undersøger, hvordan multimediedesignere kan udvikle ansvarlige og kritiske AI-kompetencer fx inden for UX/UI, digitalt design, contentproduktion og visuel kommunikation. 
 
