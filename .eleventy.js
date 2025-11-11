@@ -12,6 +12,25 @@ export default function (eleventyConfig) {
     return md.render(content);
   });
 
+  // Make all sublevel pages default to article layout (keep section indexes as-is)
+  eleventyConfig.addGlobalData("eleventyComputed", {
+    layout: (data) => {
+      const inputPath = (data.page && data.page.inputPath) || "";
+      const hasExplicitLayout = !!data.layout;
+      const isIndex = inputPath.endsWith("/index.md");
+      const inArticleSections =
+        inputPath.includes("/src/om-projektet/") ||
+        inputPath.includes("/src/aia-forlob/") ||
+        inputPath.includes("/src/begreber-og-fokusomraader/") ||
+        inputPath.includes("/src/produkter/");
+
+      if (inArticleSections && !isIndex) {
+        return "article.njk";
+      }
+      return hasExplicitLayout ? data.layout : data.layout;
+    },
+  });
+
   // Section collections (auto-list pages under section indexes)
   eleventyConfig.addCollection("om_projektet", (collectionApi) => {
     return collectionApi
