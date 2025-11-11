@@ -25,7 +25,7 @@ blocks:
       [Læs mere om vibecoding i denne artikel fra IBM](https://www.ibm.com/think/topics/vibe-coding)
   - type: cta
     url: https://keamarg.github.io/AiA/produkter/research-tools/
-    text: Se mere om code-review værktøjet
+    text: Læs mere om code-review værktøjet
   - type: image_block
     image: /assets/uploads/aia_3.jpeg
 ---
