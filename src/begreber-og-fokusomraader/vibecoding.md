@@ -20,9 +20,9 @@ blocks:
 
 
       Selvom vibe coding på mange måder er hurtigt og smart, kan AI-genereret kode indeholde fejl, være svær at vedligeholde og/eller have sikkerhedsrisici. Derfor bør vibe coding for nuværende primært ses som et samarbejde mellem menneske og maskine, der er velegnet til mindre projekter og små prototyper, og ikke som en erstatning for faglighed i større, mere komplekse projekter.
-
-
-      [Læs mere om vibecoding i denne artikel fra IBM](https://www.ibm.com/think/topics/vibe-coding)
+  - type: cta
+    url: https://www.ibm.com/think/topics/vibe-coding
+    text: Læs mere om vibecoding i denne artikel fra IBM (eksternt link)
   - type: cta
     url: https://keamarg.github.io/AiA/produkter/research-tools/
     text: Læs mere om code-review værktøjet
