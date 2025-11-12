@@ -27,6 +27,13 @@
               required: false,
             },
             {
+              name: "rounded",
+              label: "Rounded corners",
+              widget: "boolean",
+              default: false,
+              required: false
+            },
+            {
               name: "align",
               label: "Align",
               widget: "select",
@@ -75,7 +82,7 @@
             },
           ],
           pattern:
-            /^!\[(.*?)\]\((.*?)\)\{\.(img-(left|center|right))\s+\.(img-(small|medium|full))(?:\s+\.img-h-(\d+))?(?:\s+\.(img-fade-(?:top-bottom|left-right|all)))?\}/,
+            /^!\[(.*?)\]\((.*?)\)\{\.(img-(left|center|right))\s+\.(img-(small|medium|full))(?:\s+\.img-h-(\d+))?(?:\s+\.(img-fade-(?:top-bottom|left-right|all)))?(?:\s+\.img-rounded)?\}/,
           fromBlock: function (match) {
             return {
               alt: match[1],
@@ -84,11 +91,13 @@
               size: match[6],
               height: match[7] || "auto",
               fade: (match[8] || "").replace("img-fade-", "") || "none",
+              rounded: (match[0] || "").includes(".img-rounded")
             };
           },
           toBlock: function ({
             src,
             alt,
+            rounded = false,
             align = "center",
             size = "medium",
             height = "auto",
@@ -97,13 +106,15 @@
             if (!src) return "";
             const hClass = height !== "auto" ? ` .img-h-${height}` : "";
             const fClass = fade !== "none" ? ` .img-fade-${fade}` : "";
+            const rClass = rounded ? ` .img-rounded` : "";
             return `![${
               alt || ""
-            }](${src}){.img-${align} .img-${size}${hClass}${fClass}}`;
+            }](${src}){.img-${align} .img-${size}${hClass}${fClass}${rClass}}`;
           },
           toPreview: function ({
             src,
             alt,
+            rounded = false,
             align = "center",
             size = "medium",
             height = "auto",
@@ -112,9 +123,10 @@
             if (!src) return "";
             const hClass = height !== "auto" ? ` img-h-${height}` : "";
             const fClass = fade !== "none" ? ` img-fade-${fade}` : "";
+            const rClass = rounded ? ` img-rounded` : "";
             return `<img src="${src}" alt="${
               alt || ""
-            }" class="img-${align} img-${size}${hClass}${fClass}" />`;
+            }" class="img-${align} img-${size}${hClass}${fClass}${rClass}" />`;
           },
         });
       }

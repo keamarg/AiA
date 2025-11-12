@@ -68,21 +68,22 @@
     .prose img.img-small { width: 33%; }
     .prose img.img-medium { width: 66%; }
     .prose img.img-full { width: 100%; }
+    .prose img.img-rounded { border-radius: var(--radius); border: 1px solid var(--border); }
     /* Gradient masks for images (works on page-hero and prose) */
-    .img-fade-top { -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%); mask-image: linear-gradient(to bottom, transparent, black 20%); }
-    .img-fade-bottom { -webkit-mask-image: linear-gradient(to top, transparent, black 20%); mask-image: linear-gradient(to top, transparent, black 20%); }
-    .img-fade-both { -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent); mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent); }
-    .img-fade-left { -webkit-mask-image: linear-gradient(to right, transparent, black 20%); mask-image: linear-gradient(to right, transparent, black 20%); }
-    .img-fade-right { -webkit-mask-image: linear-gradient(to left, transparent, black 20%); mask-image: linear-gradient(to left, transparent, black 20%); }
-    .img-fade-sides { -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); }
+    .img-fade-top { -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%); mask-image: linear-gradient(to bottom, transparent, black 10%); }
+    .img-fade-bottom { -webkit-mask-image: linear-gradient(to top, transparent, black 10%); mask-image: linear-gradient(to top, transparent, black 10%); }
+    .img-fade-both { -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); }
+    .img-fade-left { -webkit-mask-image: linear-gradient(to right, transparent, black 10%); mask-image: linear-gradient(to right, transparent, black 10%); }
+    .img-fade-right { -webkit-mask-image: linear-gradient(to left, transparent, black 10%); mask-image: linear-gradient(to left, transparent, black 10%); }
+    .img-fade-sides { -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
     .img-fade-all {
       -webkit-mask-image:
-        linear-gradient(to right, transparent, black 15%, black 85%, transparent),
-        linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+        linear-gradient(to right, transparent, black 10%, black 90%, transparent),
+        linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
       -webkit-mask-composite: source-in;
       mask-image:
-        linear-gradient(to right, transparent, black 15%, black 85%, transparent),
-        linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+        linear-gradient(to right, transparent, black 10%, black 90%, transparent),
+        linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
       mask-composite: intersect;
     }
   </style>
