@@ -67,18 +67,15 @@
               widget: "select",
               options: [
                 { label: "None", value: "none" },
-                { label: "Top", value: "top" },
-                { label: "Bottom", value: "bottom" },
-                { label: "Top & Bottom", value: "both" },
-                { label: "Left", value: "left" },
-                { label: "Right", value: "right" },
-                { label: "Sides (Left & Right)", value: "sides" },
+                { label: "Top/Bottom", value: "top-bottom" },
+                { label: "Left/Right", value: "left-right" },
+                { label: "All Sides", value: "all" }
               ],
               default: "none",
             },
           ],
           pattern:
-            /^!\[(.*?)\]\((.*?)\)\{\.(img-(left|center|right))\s+\.(img-(small|medium|full))(?:\s+\.img-h-(\d+))?(?:\s+\.(img-fade-(?:top|bottom|both|left|right|sides)))?\}/,
+            /^!\[(.*?)\]\((.*?)\)\{\.(img-(left|center|right))\s+\.(img-(small|medium|full))(?:\s+\.img-h-(\d+))?(?:\s+\.(img-fade-(?:top-bottom|left-right|all)))?\}/,
           fromBlock: function (match) {
             return {
               alt: match[1],
