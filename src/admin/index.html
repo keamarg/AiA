@@ -82,7 +82,8 @@
             },
           ],
           // Match either HTML <img ...> with classes, or markdown image plus attributes (same or next lines)
-          pattern: /(?:<img\s+[^>]*>)|(?:!\[[^\]]*?\]\([^)]*?\)[ \t]*(?:\r?\n[ \t]*)*\{[^}]*\})/m,
+          pattern:
+            /(?:<img\s+[^>]*>)|(?:!\[[^\]]*?\]\([^)]*?\)[ \t]*(?:\r?\n[ \t]*)*\{[^}]*\})/m,
           fromBlock: function (match) {
             const raw = match[0];
             let alt = "";
@@ -140,7 +141,8 @@
                 } else if (t.startsWith(".img-fade-")) {
                   const f = t.replace(".img-fade-", "");
                   if (f === "both" || f === "top-bottom") fade = "top-bottom";
-                  else if (f === "sides" || f === "left-right") fade = "left-right";
+                  else if (f === "sides" || f === "left-right")
+                    fade = "left-right";
                   else if (f === "all") fade = "all";
                 } else if (t === ".img-rounded") {
                   rounded = true;
@@ -162,7 +164,8 @@
             const hClass = height !== "auto" ? ` img-h-${height}` : "";
             const fClass = fade !== "none" ? ` img-fade-${fade}` : "";
             const rClass = rounded ? ` img-rounded` : "";
-            const cls = `img-${align} img-${size}${hClass}${fClass}${rClass}`.trim();
+            const cls =
+              `img-${align} img-${size}${hClass}${fClass}${rClass}`.trim();
             return `<img src="${src}" alt="${alt || ""}" class="${cls}">`;
           },
           toPreview: function ({

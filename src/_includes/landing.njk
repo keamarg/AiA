@@ -96,7 +96,16 @@
 <body>
   <header class="nav">
     <div class="nav-inner">
-      <a class="brand" href="{{ '/' | url }}">{{ site.title or 'AiA' }}</a>
+      {% set __logo = site.logo %}
+      {% if __logo and __logo[0] != '/' %}{% set __logo = '/assets/uploads/' ~ __logo %}{% endif %}
+      {% if __logo %}{% set __logo = __logo | replace('/AiA/assets/', '/assets/') %}{% endif %}
+      <a class="brand" href="{{ '/' | url }}">
+        {% if __logo %}
+          <img src="{{ __logo | url }}" alt="{{ site.title or 'AiA' }}" style="height:28px;width:auto;display:block;" />
+        {% else %}
+          {{ site.title or 'AiA' }}
+        {% endif %}
+      </a>
       <ul class="menu">
         {% if navigation and navigation.items %}
           {% for item in navigation.items %}
@@ -224,7 +233,7 @@
             <div class="prose">{{ block.right | markdown | fixImgUrls | safe }}</div>
           </div>
         {% elif block.type == 'cta' and block.url %}
-          <p><a class="chip" href="{{ block.url }}">{{ block.label or block.text or 'Learn more' }}</a></p>
+          <p><a class="chip" href="{{ block.url | url }}">{{ block.label or block.text or 'Learn more' }}</a></p>
         {% endif %}
       {% endfor %}
     {% else %}

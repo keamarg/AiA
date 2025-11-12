@@ -63,6 +63,15 @@ collections:
               widget: image,
               required: false,
             }
+          - label: Footer
+            name: footer
+            widget: object
+            collapsed: false
+            required: false
+            fields:
+              - { label: Text, name: text, widget: text, required: false }
+              - { label: CTA Text, name: cta_text, widget: string, required: false }
+              - { label: CTA URL, name: cta_url, widget: string, required: false }
           - { label: Body, name: body, widget: markdown, required: false }
 
   # Category: Om projektet
@@ -717,6 +726,7 @@ collections:
         name: site
         fields:
           - { label: Title, name: title, widget: string }
+          - { label: Logo, name: logo, widget: image, required: false }
           - label: Theme
             name: theme
             widget: object

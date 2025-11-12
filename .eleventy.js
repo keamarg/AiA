@@ -43,7 +43,12 @@ export default function (eleventyConfig) {
     return String(html).replace(
       /(<img[^>]*\ssrc=["'])([^"']+)(["'][^>]*>)/gi,
       (_, head, src, tail) => {
-        if (!src || src.startsWith("http://") || src.startsWith("https://") || src.startsWith("data:")) {
+        if (
+          !src ||
+          src.startsWith("http://") ||
+          src.startsWith("https://") ||
+          src.startsWith("data:")
+        ) {
           return head + src + tail;
         }
         return head + urlFilter(src) + tail;

@@ -102,7 +102,16 @@
 <body>
   <header class="nav">
     <div class="nav-inner">
-      <a class="brand" href="{{ '/' | url }}">{{ site.title or 'AiA' }}</a>
+      {% set __logo = site.logo %}
+      {% if __logo and __logo[0] != '/' %}{% set __logo = '/assets/uploads/' ~ __logo %}{% endif %}
+      {% if __logo %}{% set __logo = __logo | replace('/AiA/assets/', '/assets/') %}{% endif %}
+      <a class="brand" href="{{ '/' | url }}">
+        {% if __logo %}
+          <img src="{{ __logo | url }}" alt="{{ site.title or 'AiA' }}" style="height:28px;width:auto;display:block;" />
+        {% else %}
+          {{ site.title or 'AiA' }}
+        {% endif %}
+      </a>
       <ul class="menu">
         {% if navigation and navigation.items %}
           {% for item in navigation.items %}
@@ -232,7 +241,7 @@
             <div class="prose">{{ block.right | markdown | fixImgUrls | safe }}</div>
           </div>
         {% elif block.type == 'cta' and block.url %}
-          <p><a class="chip" href="{{ block.url }}">{{ block.label or block.text or 'Learn more' }}</a></p>
+          <p><a class="chip" href="{{ block.url | url }}">{{ block.label or block.text or 'Learn more' }}</a></p>
         {% endif %}
       {% endfor %}
     {% else %}
@@ -250,5 +259,15 @@
       </div>
     {% endif %}
   </main>
+  {% if isHome and footer and (footer.text or footer.cta_url or footer.cta_text) %}
+    <footer class="site-footer" style="border-top:1px solid var(--border);">
+      <div class="nav-inner" style="max-width: var(--content-max); padding: 1.25rem 1rem; display:flex; flex-direction: column; gap: 0.75rem; align-items:center; text-align:center;">
+        <div class="intro" style="margin:0;">{{ footer.text }}</div>
+        {% if footer.cta_url %}
+          <a class="chip" href="{{ footer.cta_url | url }}">{{ footer.cta_text or 'Learn more' }}</a>
+        {% endif %}
+      </div>
+    </footer>
+  {% endif %}
 </body>
 </html>
