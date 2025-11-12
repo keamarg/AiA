@@ -21,7 +21,7 @@ blocks:
       <img src="/assets/uploads/adobestock_1593070777-medium.jpeg" alt="" class="img-center img-full img-h-200 img-rounded">
 
 
-      <br><br>
+      <br>
 
 
       ## **Forskningsspørgsmål**
