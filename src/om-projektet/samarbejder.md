@@ -7,7 +7,7 @@ blocks:
   - type: image_block
     gradient: none
     image: /assets/uploads/adobestock_393304265-medium.jpeg
-    height: 300
+    height: 200
   - type: richtext
     content: >-
       Erhvervsakademi København (EK) deltager i AI-kompetencepagten for at
