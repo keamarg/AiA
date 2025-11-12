@@ -1,6 +1,7 @@
 ---
 title: Arbejdspakker
 layout: article.njk
+show_subnav: false
 image: ""
 intro: ""
 blocks: []

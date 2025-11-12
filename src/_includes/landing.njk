@@ -58,6 +58,7 @@
     .hero p { color: var(--muted); font-size: clamp(1rem, 2vw, 1.25rem); margin: 0 auto; max-width: 60ch; }
 
     main { max-width: var(--content-max); margin: 2rem auto; padding: 0 1rem 3rem; }
+    .subnav { margin: 0 0 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; }
     .gallery figure { margin: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--card); }
     .page-hero img, .gallery figure img { width: 100%; height: auto; object-fit: contain; }
@@ -165,6 +166,25 @@
   {% endif %}
 
   <main>
+    {# Render child navigation links when current page is a parent item #}
+    {% set __current = null %}
+    {% set __allowSub = not (show_subnav is defined and (show_subnav == false or show_subnav == 'false')) %}
+    {% if navigation and navigation.items %}
+      {% set __purl = (page.url | url) %}
+      {% set __praw = page.url %}
+      {% set __pstripped = (__praw | replace('/AiA','')) %}
+      {% for n in navigation.items %}
+        {% set __nurl = (n.url | url) %}
+        {% if __nurl == __purl or n.url == __praw or n.url == __pstripped %}{% set __current = n %}{% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if __allowSub and __current and __current.children and (__current.children | length) %}
+      <nav class="subnav">
+        {% for c in __current.children %}
+          <a class="chip" href="{{ c.url | url }}">{{ c.label }}</a>
+        {% endfor %}
+      </nav>
+    {% endif %}
     {% set __baseDir = '/assets/uploads/' %}
     {% if hasBlocks %}
       {% for block in blocks %}

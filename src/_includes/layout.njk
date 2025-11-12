@@ -62,6 +62,7 @@
     /* Main */
     main { max-width: var(--content-max); margin: 2rem auto; padding: 0 1rem 3rem; }
     .page-hero { margin: 1rem 0 2rem; border-radius: var(--radius); overflow: hidden; border: 0; background: transparent; position: relative; }
+    .subnav { margin: 0 0 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .intro { color: var(--muted); margin-bottom: 1rem; }
     .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
     .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; }
@@ -173,6 +174,25 @@
   {% endif %}
 
   <main>
+    {# Render child navigation links when current page is a parent item #}
+    {% set __current = null %}
+    {% set __allowSub = not (show_subnav is defined and (show_subnav == false or show_subnav == 'false')) %}
+    {% if navigation and navigation.items %}
+      {% set __purl = (page.url | url) %}
+      {% set __praw = page.url %}
+      {% set __pstripped = (__praw | replace('/AiA','')) %}
+      {% for n in navigation.items %}
+        {% set __nurl = (n.url | url) %}
+        {% if __nurl == __purl or n.url == __praw or n.url == __pstripped %}{% set __current = n %}{% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if __allowSub and __current and __current.children and (__current.children | length) %}
+      <nav class="subnav">
+        {% for c in __current.children %}
+          <a class="chip" href="{{ c.url | url }}">{{ c.label }}</a>
+        {% endfor %}
+      </nav>
+    {% endif %}
     {% if hasBlocks %}
       {% for block in blocks %}
         {% if block.type == 'hero' %}

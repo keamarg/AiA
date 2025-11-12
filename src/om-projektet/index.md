@@ -1,6 +1,7 @@
 ---
 title: Om projektet
 layout: section.njk
+show_subnav: true
 image: ""
 intro: ""
 ---
