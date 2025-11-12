@@ -1,6 +1,10 @@
 ---
 title: Tidligere forløb
 layout: article.njk
-image: /assets/uploads/adobestock_426832618-large.jpeg
+image: ""
 intro: Ingen tidligere forløb
+blocks:
+  - type: image_block
+    gradient: all
+    image: /assets/uploads/adobestock_351071184-large.jpeg
 ---
