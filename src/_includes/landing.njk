@@ -60,10 +60,10 @@
     .prose::after { content: ""; display: block; clear: both; }
     .prose img { max-width: 100%; height: auto; }
     /* Height utilities */
-    .prose img.img-h-200 { height: 200px; width: auto; object-fit: contain; }
-    .prose img.img-h-300 { height: 300px; width: auto; object-fit: contain; }
-    .prose img.img-h-400 { height: 400px; width: auto; object-fit: contain; }
-    .prose img.img-h-500 { height: 500px; width: auto; object-fit: contain; }
+    .prose img.img-h-200 { width: 100%; height: 200px; object-fit: cover; object-position: center; }
+    .prose img.img-h-300 { width: 100%; height: 300px; object-fit: cover; object-position: center; }
+    .prose img.img-h-400 { width: 100%; height: 400px; object-fit: cover; object-position: center; }
+    .prose img.img-h-500 { width: 100%; height: 500px; object-fit: cover; object-position: center; }
     .prose img.img-left { float: left; margin: 0 1rem 1rem 0; }
     .prose img.img-right { float: right; margin: 0 0 1rem 1rem; }
     .prose img.img-center { display: block; margin-left: auto; margin-right: auto; }
@@ -74,6 +74,9 @@
     .img-fade-top { -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%); mask-image: linear-gradient(to bottom, transparent, black 20%); }
     .img-fade-bottom { -webkit-mask-image: linear-gradient(to top, transparent, black 20%); mask-image: linear-gradient(to top, transparent, black 20%); }
     .img-fade-both { -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent); mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent); }
+    .img-fade-left { -webkit-mask-image: linear-gradient(to right, transparent, black 20%); mask-image: linear-gradient(to right, transparent, black 20%); }
+    .img-fade-right { -webkit-mask-image: linear-gradient(to left, transparent, black 20%); mask-image: linear-gradient(to left, transparent, black 20%); }
+    .img-fade-sides { -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); }
   </style>
   <meta name="theme-color" content="{{ (site.theme and site.theme.bg) or '#0b0b0c' }}">
   {% set __accent = (site.theme and site.theme.accent) or '#7c5cff' %}
@@ -150,8 +153,11 @@
             {% if block.gradient == 'top' %}{% set __fadeClass = 'img-fade-top' %}
             {% elif block.gradient == 'bottom' %}{% set __fadeClass = 'img-fade-bottom' %}
             {% elif block.gradient == 'both' %}{% set __fadeClass = 'img-fade-both' %}
+            {% elif block.gradient == 'left' %}{% set __fadeClass = 'img-fade-left' %}
+            {% elif block.gradient == 'right' %}{% set __fadeClass = 'img-fade-right' %}
+            {% elif block.gradient == 'sides' %}{% set __fadeClass = 'img-fade-sides' %}
             {% endif %}
-            <img src="{{ __bimg | url }}" alt="" class="{{ __fadeClass }}" {% if block.height %}style="height: {{ block.height }}px; width: auto; object-fit: contain;"{% endif %} />
+            <img src="{{ __bimg | url }}" alt="" class="{{ __fadeClass }}" {% if block.height %}style="width: 100%; height: {{ block.height }}px; object-fit: cover; object-position: center;"{% endif %} />
             {% if block.caption %}<figcaption class="intro">{{ block.caption }}</figcaption>{% endif %}
           </figure>
         {% elif block.type == 'video' %}

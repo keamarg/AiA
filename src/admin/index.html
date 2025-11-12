@@ -9,7 +9,7 @@
   <body>
     <script>
       // Use a relative config path so it works locally and on GitHub Pages
-      window.CMS_CONFIG_PATH = 'config.yml?v=4';
+      window.CMS_CONFIG_PATH = "config.yml?v=4";
     </script>
     <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
     <script>
@@ -20,7 +20,12 @@
           label: "Image (aligned)",
           fields: [
             { name: "src", label: "Image", widget: "image" },
-            { name: "alt", label: "Alt text", widget: "string", required: false },
+            {
+              name: "alt",
+              label: "Alt text",
+              widget: "string",
+              required: false,
+            },
             {
               name: "align",
               label: "Align",
@@ -52,9 +57,9 @@
                 { label: "200px", value: "200" },
                 { label: "300px", value: "300" },
                 { label: "400px", value: "400" },
-                { label: "500px", value: "500" }
+                { label: "500px", value: "500" },
               ],
-              default: "auto"
+              default: "auto",
             },
             {
               name: "fade",
@@ -64,12 +69,16 @@
                 { label: "None", value: "none" },
                 { label: "Top", value: "top" },
                 { label: "Bottom", value: "bottom" },
-                { label: "Top & Bottom", value: "both" }
+                { label: "Top & Bottom", value: "both" },
+                { label: "Left", value: "left" },
+                { label: "Right", value: "right" },
+                { label: "Sides (Left & Right)", value: "sides" }
               ],
-              default: "none"
-            }
+              default: "none",
+            },
           ],
-          pattern: /^!\[(.*?)\]\((.*?)\)\{\.(img-(left|center|right))\s+\.(img-(small|medium|full))(?:\s+\.img-h-(\d+))?(?:\s+\.(img-fade-(?:top|bottom|both)))?\}/,
+          pattern:
+            /^!\[(.*?)\]\((.*?)\)\{\.(img-(left|center|right))\s+\.(img-(small|medium|full))(?:\s+\.img-h-(\d+))?(?:\s+\.(img-fade-(?:top|bottom|both|left|right|sides)))?\}/,
           fromBlock: function (match) {
             return {
               alt: match[1],
@@ -77,20 +86,38 @@
               align: match[4],
               size: match[6],
               height: match[7] || "auto",
-              fade: (match[8] || "").replace("img-fade-","") || "none"
+              fade: (match[8] || "").replace("img-fade-", "") || "none",
             };
           },
-          toBlock: function ({ src, alt, align = "center", size = "medium", height = "auto", fade = "none" }) {
+          toBlock: function ({
+            src,
+            alt,
+            align = "center",
+            size = "medium",
+            height = "auto",
+            fade = "none",
+          }) {
             if (!src) return "";
             const hClass = height !== "auto" ? ` .img-h-${height}` : "";
             const fClass = fade !== "none" ? ` .img-fade-${fade}` : "";
-            return `![${alt || ""}](${src}){.img-${align} .img-${size}${hClass}${fClass}}`;
+            return `![${
+              alt || ""
+            }](${src}){.img-${align} .img-${size}${hClass}${fClass}}`;
           },
-          toPreview: function ({ src, alt, align = "center", size = "medium", height = "auto", fade = "none" }) {
+          toPreview: function ({
+            src,
+            alt,
+            align = "center",
+            size = "medium",
+            height = "auto",
+            fade = "none",
+          }) {
             if (!src) return "";
             const hClass = height !== "auto" ? ` img-h-${height}` : "";
             const fClass = fade !== "none" ? ` img-fade-${fade}` : "";
-            return `<img src="${src}" alt="${alt || ""}" class="img-${align} img-${size}${hClass}${fClass}" />`;
+            return `<img src="${src}" alt="${
+              alt || ""
+            }" class="img-${align} img-${size}${hClass}${fClass}" />`;
           },
         });
       }

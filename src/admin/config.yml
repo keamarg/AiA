@@ -125,7 +125,7 @@ collections:
                 name: gradient
                 widget: select
                 required: false
-                options: ["none", "top", "bottom", "both"]
+                options: ["none", "top", "bottom", "both", "left", "right", "sides"]
                 default: "none"
               - {
                   label: Caption,
@@ -264,7 +264,7 @@ collections:
                     name: gradient,
                     widget: select,
                     required: false,
-                    options: ["none", "top", "bottom", "both"],
+                    options: ["none", "top", "bottom", "both", "left", "right", "sides"],
                     default: "none",
                   },
                   {
@@ -426,7 +426,7 @@ collections:
                     name: gradient,
                     widget: select,
                     required: false,
-                    options: ["none", "top", "bottom", "both"],
+                    options: ["none", "top", "bottom", "both", "left", "right", "sides"],
                     default: "none",
                   },
                   {
