@@ -2,7 +2,7 @@
 title: AiA forløb
 layout: section.njk
 show_subnav: true
-image: /assets/uploads/adobestock_1593070777-medium.jpeg
+image: ""
 intro: ""
 blocks: []
 ---
