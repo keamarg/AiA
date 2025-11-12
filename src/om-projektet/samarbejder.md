@@ -5,7 +5,7 @@ image: null
 intro: null
 blocks:
   - type: image_block
-    gradient: none
+    gradient: left-right
     image: /assets/uploads/adobestock_393304265-medium.jpeg
     height: 200
   - type: richtext
