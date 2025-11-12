@@ -1,15 +1,21 @@
 ---
 title: Kontakt
 layout: article.njk
-image: ""
-intro: null
+image: aia_hero.jpeg
+intro: "Har du spørgsmål til AiA-projektet? Kontakt os – vi vender tilbage hurtigst muligt."
 ---
-**Projektleder**
 
-Morten Boesen (mobo@ek.dk)
+### Projektleder og docent
 
-**Projektdeltagere**:
+Morten Boesen  
+[mobo@ek.dk](mailto:mobo@ek.dk)
 
-Sarah O'Neill (saro@ek.dk)
+### Projektmedlem og forskningskonsulent
 
-Martin Gundtoft (marg@ek.dk)
+Sarah O'Neill  
+[saro@ek.dk](mailto:saro@ek.dk)
+
+### Projektmedlem og specialkonsulent
+
+Martin Gundtoft  
+[marg@ek.dk](mailto:marg@ek.dk)
