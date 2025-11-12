@@ -36,6 +36,20 @@ export default function (eleventyConfig) {
     return md.render(content);
   });
 
+  // Post-process HTML to prefix image src using Eleventy's url filter (handles raw <img> in content)
+  const urlFilter = eleventyConfig.getFilter && eleventyConfig.getFilter("url");
+  eleventyConfig.addFilter("fixImgUrls", (html) => {
+    if (!html || !urlFilter) return html || "";
+    return String(html).replace(
+      /(<img[^>]*\ssrc=["'])([^"']+)(["'][^>]*>)/gi,
+      (_, head, src, tail) => {
+        if (!src || src.startsWith("http://") || src.startsWith("https://") || src.startsWith("data:")) {
+          return head + src + tail;
+        }
+        return head + urlFilter(src) + tail;
+      }
+    );
+  });
   // Make all sublevel pages default to article layout (keep section indexes as-is)
   eleventyConfig.addGlobalData("eleventyComputed", {
     layout: (data) => {

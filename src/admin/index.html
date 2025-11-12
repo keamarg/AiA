@@ -31,7 +31,7 @@
               label: "Rounded corners",
               widget: "boolean",
               default: false,
-              required: false
+              required: false,
             },
             {
               name: "align",
@@ -81,18 +81,73 @@
               default: "none",
             },
           ],
-          pattern:
-            /^!\[(.*?)\]\((.*?)\)\{\.(img-(left|center|right))\s+\.(img-(small|medium|full))(?:\s+\.img-h-(\d+))?(?:\s+\.(img-fade-(?:top-bottom|left-right|all)))?(?:\s+\.img-rounded)?\}/,
+          // Match either HTML <img ...> with classes, or markdown image plus attributes (same or next lines)
+          pattern: /(?:<img\s+[^>]*>)|(?:!\[[^\]]*?\]\([^)]*?\)[ \t]*(?:\r?\n[ \t]*)*\{[^}]*\})/m,
           fromBlock: function (match) {
-            return {
-              alt: match[1],
-              src: match[2],
-              align: match[4],
-              size: match[6],
-              height: match[7] || "auto",
-              fade: (match[8] || "").replace("img-fade-", "") || "none",
-              rounded: (match[0] || "").includes(".img-rounded")
-            };
+            const raw = match[0];
+            let alt = "";
+            let src = "";
+            let align = "center";
+            let size = "medium";
+            let height = "auto";
+            let fade = "none";
+            let rounded = false;
+            if (raw.startsWith("<img")) {
+              const srcMatch = raw.match(/src=["']([^"']+)["']/i);
+              const altMatch = raw.match(/alt=["']([^"']*)["']/i);
+              const classMatch = raw.match(/class=["']([^"']*)["']/i);
+              src = srcMatch ? srcMatch[1] : "";
+              alt = altMatch ? altMatch[1] : "";
+              const classes = (classMatch ? classMatch[1] : "").split(/\s+/);
+              classes.forEach((t) => {
+                if (t === "img-left") align = "left";
+                else if (t === "img-center") align = "center";
+                else if (t === "img-right") align = "right";
+                else if (t === "img-small") size = "small";
+                else if (t === "img-medium") size = "medium";
+                else if (t === "img-full") size = "full";
+                else if (t.startsWith("img-h-")) {
+                  const h = t.replace("img-h-", "");
+                  if (/^\d+$/.test(h)) height = h;
+                } else if (t.startsWith("img-fade-")) {
+                  const f = t.replace("img-fade-", "");
+                  if (f === "top-bottom") fade = "top-bottom";
+                  else if (f === "left-right") fade = "left-right";
+                  else if (f === "all") fade = "all";
+                } else if (t === "img-rounded") {
+                  rounded = true;
+                }
+              });
+            } else {
+              const mAlt = raw.match(/!\[([^\]]*)\]/);
+              const mSrc = raw.match(/\(([^)]+)\)/);
+              const mAttr = raw.match(/\{([^}]*)\}/);
+              alt = mAlt ? mAlt[1] : "";
+              src = mSrc ? mSrc[1] : "";
+              const attrStr = (mAttr ? mAttr[1] : "").trim();
+              const tokens = attrStr.split(/\s+/);
+              tokens.forEach((t) => {
+                if (!t) return;
+                if (t === ".img-left") align = "left";
+                else if (t === ".img-center") align = "center";
+                else if (t === ".img-right") align = "right";
+                else if (t === ".img-small") size = "small";
+                else if (t === ".img-medium") size = "medium";
+                else if (t === ".img-full") size = "full";
+                else if (t.startsWith(".img-h-")) {
+                  const h = t.replace(".img-h-", "");
+                  if (/^\d+$/.test(h)) height = h;
+                } else if (t.startsWith(".img-fade-")) {
+                  const f = t.replace(".img-fade-", "");
+                  if (f === "both" || f === "top-bottom") fade = "top-bottom";
+                  else if (f === "sides" || f === "left-right") fade = "left-right";
+                  else if (f === "all") fade = "all";
+                } else if (t === ".img-rounded") {
+                  rounded = true;
+                }
+              });
+            }
+            return { alt, src, align, size, height, fade, rounded };
           },
           toBlock: function ({
             src,
@@ -104,12 +159,11 @@
             fade = "none",
           }) {
             if (!src) return "";
-            const hClass = height !== "auto" ? ` .img-h-${height}` : "";
-            const fClass = fade !== "none" ? ` .img-fade-${fade}` : "";
-            const rClass = rounded ? ` .img-rounded` : "";
-            return `![${
-              alt || ""
-            }](${src}){.img-${align} .img-${size}${hClass}${fClass}${rClass}}`;
+            const hClass = height !== "auto" ? ` img-h-${height}` : "";
+            const fClass = fade !== "none" ? ` img-fade-${fade}` : "";
+            const rClass = rounded ? ` img-rounded` : "";
+            const cls = `img-${align} img-${size}${hClass}${fClass}${rClass}`.trim();
+            return `<img src="${src}" alt="${alt || ""}" class="${cls}">`;
           },
           toPreview: function ({
             src,

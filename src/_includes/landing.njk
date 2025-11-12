@@ -153,7 +153,7 @@
           </section>
         {% elif block.type == 'richtext' %}
           <div class="prose">
-            {{ block.content | markdown | safe }}
+            {{ block.content | markdown | fixImgUrls | safe }}
           </div>
         {% elif block.type == 'image_block' and block.image %}
           {% set __bimg = block.image %}
@@ -220,8 +220,8 @@
           </div>
         {% elif block.type == 'two_column' %}
           <div class="grid-2">
-            <div class="prose">{{ block.left | markdown | safe }}</div>
-            <div class="prose">{{ block.right | markdown | safe }}</div>
+            <div class="prose">{{ block.left | markdown | fixImgUrls | safe }}</div>
+            <div class="prose">{{ block.right | markdown | fixImgUrls | safe }}</div>
           </div>
         {% elif block.type == 'cta' and block.url %}
           <p><a class="chip" href="{{ block.url }}">{{ block.label or block.text or 'Learn more' }}</a></p>
@@ -238,7 +238,7 @@
         <div class="intro">{{ intro }}</div>
       {% endif %}
       <div class="prose">
-        {{ content | safe }}
+        {{ content | fixImgUrls | safe }}
       </div>
     {% endif %}
   </main>
