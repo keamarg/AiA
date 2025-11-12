@@ -6,13 +6,13 @@ image: ""
 intro: ""
 blocks: []
 ---
+<img src="/assets/uploads/adobestock_1191673414-medium.jpeg" alt="" class="img-center img-full img-h-200 img-rounded">
+
 ## **WP1: Aktionsforløb i virksomheder**
 
 Gennem eksperimenterende aktionsforløb inspireret af forskningsbaseret designpraksis samarbejdes der med virksomheder om at udforske grænserne for, hvordan AI-teknologier kan anvendes, hackes og udfordres i praksis. I modsætning til traditionelle tilgange, der fokuserer på at lære medarbejdere at bruge AI-værktøjer, som de er designet til, søger denne arbejdspakke bevidst at skabe gnidninger og forstyrrelser i samspillet mellem mennesker og teknologi​. Gennem eksperimenter med prompt hacking, jailbreaking og andre kreative omveje udfordres teknologiernes foruddefinerede logikker for at undersøge, hvordan sådanne forstyrrelser kan vække undren, refleksion og stimulere digital forestillingsevne. Dermed bliver forstyrrelserne en vej til at udvikle både ansvarlige og kreative AI-kompetencer. 
 
 Til denne arbejdspakke etableres et AI-Eksploratorium, som fungerer som et eksperimenterende laboratorium for udvikling og afprøvning af probes og prototyper​, der netop er designet til at fremkalde disse forstyrrelser. Eksploratoriet tilbyder et alternativ til instrumentelle opkvalificeringsforløb ved at skabe rum for kreativt og kritisk samspil med AI, hvor fejl, misforståelser og uventede reaktioner ses som værdifulde læringsøjeblikke snarere end som barrierer. Formålet er at skabe situationer, hvor medarbejdere og forskere sammen kan undersøge, hvad der sker, når AI ikke blot bruges intenderet, men bruges på måder, der udfordrer teknologiens egne præmisser, som en måde at udvikle både teknologisk dømmekraft, ansvarlig refleksion og digital forestillingsevne i faglig praksis.
-
-<img src="/assets/uploads/adobestock_1191673414-medium.jpeg" alt="" class="img-center img-full img-h-200 img-rounded">
 
 ## **WP2: Interviews med AI-champions**
 
