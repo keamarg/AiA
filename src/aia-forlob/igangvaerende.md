@@ -12,7 +12,7 @@ blocks:
       [→ AiA-forløb med fokus på multimediedesignere](#multimediedesignere)
 
 
-      [](#multimediedesignere)<br>
+      [](#multimediedesignere)
 
 
       <a name="softwareudviklere"></a> 
