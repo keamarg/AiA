@@ -3,6 +3,9 @@ title: Igangværende forløb
 layout: article.njk
 image: ""
 intro: null
+blocks:
+  - type: video
+    file: /assets/uploads/adobestock_275948216_video_hd_preview.mov
 ---
 [Gå til AiA-forløb med fokus på softwareudviklere](#softwareudviklere)
 
