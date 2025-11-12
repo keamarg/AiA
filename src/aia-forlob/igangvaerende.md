@@ -15,13 +15,10 @@ blocks:
       <br>
 
 
-      <a name="softwareudviklere">
+      <a name="softwareudviklere"></a> 
 
 
-      ![](/assets/uploads/adobestock_357735250-medium.jpeg){.img-center .img-full}
-
-
-      </a> 
+      <br><br>
 
 
       ## AiA-forløb med fokus på softwareudviklere
@@ -31,6 +28,9 @@ blocks:
 
 
       Forløbet er gennemført af Kirsten Marie Grønborg, Lasse Vogelsang og en unavngiven underviser, der alle er undervisere på EK’s datamatiker-, it-arkitekt- eller it-sikkerhedsuddannelse i samarbejde med AiA-projektets øvrige forskergruppe. 
+
+
+      ![](/assets/uploads/adobestock_357735250-medium.jpeg){.img-center .img-full}
 
 
       <br>
@@ -84,13 +84,10 @@ blocks:
       Forløbet genererer data, der bidrager til AiA-projektets samlede forskning i, hvordan ansvarlige AI-kompetencer opstår i praksis. Forløbet udforsker og bidrager især til den “becoming”-tilgang, der beskriver, hvordan professionelle gradvist udvikler kompetencer gennem erfaring og social læring. Samtidig bidrager det til AiA-projektets videre udforskning af forstyrrelses- og refleksionsbaserede metoder til at udvikle kritisk og ansvarlig AI-anvendelse blandt fagprofessionelle. 
 
 
-      <a name="multimediedesignere">
+      <a name="multimediedesignere"></a>
 
 
-      ![](/assets/uploads/adobestock_430319103-medium.jpeg){.img-center .img-medium}
-
-
-      </a> 
+      <br><br> 
 
 
       ## AiA-forløb med fokus på multimediedesignere
@@ -100,6 +97,9 @@ blocks:
 
 
       Forløbet er gennemført af Karsten Løgstrup, Heidi Topholt, Klaus Mandal Hansen og Birgitte Heide, der alle er undervisere på EK’s multimediedesignuddannelse i samarbejde med AiA-projektets øvrige forskergruppe. 
+
+
+      ![](/assets/uploads/adobestock_331107732-medium.jpeg){.img-center .img-full}
 
 
       <br>
