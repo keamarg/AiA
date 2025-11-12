@@ -89,7 +89,7 @@ collections:
       - label: Layout
         name: layout
         widget: select
-        options: ["article.njk", "landing.njk"]
+        options: ["article.njk", "landing.njk", "section.njk"]
         default: "article.njk"
       - { label: Image, name: image, widget: image, required: false }
       - { label: Intro, name: intro, widget: text, required: false }
@@ -220,7 +220,7 @@ collections:
       - label: Layout
         name: layout
         widget: select
-        options: ["article.njk", "landing.njk"]
+        options: ["article.njk", "landing.njk", "section.njk"]
         default: "article.njk"
       - { label: Image, name: image, widget: image, required: false }
       - { label: Intro, name: intro, widget: text, required: false }
@@ -382,7 +382,7 @@ collections:
       - label: Layout
         name: layout
         widget: select
-        options: ["article.njk", "landing.njk"]
+        options: ["article.njk", "landing.njk", "section.njk"]
         default: "article.njk"
       - { label: Image, name: image, widget: image, required: false }
       - { label: Intro, name: intro, widget: text, required: false }
@@ -544,7 +544,7 @@ collections:
       - label: Layout
         name: layout
         widget: select
-        options: ["article.njk", "landing.njk"]
+        options: ["article.njk", "landing.njk", "section.njk"]
         default: "article.njk"
       - { label: Image, name: image, widget: image, required: false }
       - { label: Intro, name: intro, widget: text, required: false }

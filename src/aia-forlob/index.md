@@ -1,6 +1,6 @@
 ---
 title: AiA Forløb
-layout: landing.njk
+layout: section.njk
 image: ""
 intro: ""
 blocks: []

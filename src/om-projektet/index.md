@@ -1,6 +1,6 @@
 ---
 title: Om projektet
-layout: landing.njk
+layout: section.njk
 image: ""
 intro: ""
 ---

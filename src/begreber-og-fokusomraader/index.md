@@ -1,6 +1,6 @@
 ---
 title: Begreber og fokusområder
-layout: landing.njk
+layout: section.njk
 ---
 
 Oversigt over centrale begreber og fokusområder.

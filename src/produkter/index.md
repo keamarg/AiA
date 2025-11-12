@@ -1,6 +1,6 @@
 ---
 title: Produkter
-layout: landing.njk
+layout: section.njk
 intro: ""
 blocks: []
 ---

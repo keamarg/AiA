@@ -45,55 +45,27 @@
     .chip { padding: 0.35rem 0.6rem; background: var(--card); border: 1px solid var(--border); border-radius: 100px; color: var(--muted); font-size: 0.9rem; }
     .chip:hover { background: var(--card-2); color: white; }
 
-    .hero { position: relative; min-height: 50vh; display: grid; place-items: center; background-size: cover; background-position: center; }
+    .hero { position: relative; min-height: 25vh; display: grid; place-items: center; background-size: cover; background-position: center; }
     .hero-overlay {
       position: absolute;
       inset: 0;
+      /* Accent glow + strong bottom fade to bg for short heroes */
       background:
-        radial-gradient(1200px 600px at 20% 10%, rgba(124,92,255,0.25), rgba(124,92,255,0) 60%),
-        linear-gradient(to bottom, rgba(11,11,12,0.15) 0%, rgba(11,11,12,0.7) 55%, var(--bg) 100%);
+        radial-gradient(800px 400px at 20% 10%, rgba(124,92,255,0.20), rgba(124,92,255,0) 60%),
+        linear-gradient(to bottom, rgba(11,11,12,0.05) 0%, rgba(11,11,12,0.65) 45%, var(--bg) 100%);
+      pointer-events: none;
     }
-    .hero-content { position: relative; z-index: 1; text-align: center; padding: 3rem 1rem; max-width: 900px; }
-    .hero h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 0.75rem; letter-spacing: -0.02em; }
-    .hero p { color: var(--muted); font-size: clamp(1rem, 2vw, 1.25rem); margin: 0 auto; max-width: 60ch; }
+    .hero-content { position: relative; z-index: 1; text-align: center; padding: 2rem 1rem; max-width: 900px; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); margin: 0 0 0.5rem; letter-spacing: -0.02em; }
+    .hero p { color: var(--muted); font-size: clamp(1rem, 1.8vw, 1.15rem); margin: 0 auto; max-width: 60ch; }
 
     main { max-width: var(--content-max); margin: 2rem auto; padding: 0 1rem 3rem; }
     .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; }
     .gallery figure { margin: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--card); }
     .page-hero img, .gallery figure img { width: 100%; height: auto; object-fit: contain; }
     .gallery figcaption { padding: 0.5rem 0.6rem; color: var(--muted); font-size: 0.9rem; }
-    /* Prose content image utilities */
     .prose::after { content: ""; display: block; clear: both; }
     .prose img { max-width: 100%; height: auto; }
-    /* Height utilities */
-    .prose img.img-h-200 { width: 100%; height: 200px; object-fit: cover; object-position: center; }
-    .prose img.img-h-300 { width: 100%; height: 300px; object-fit: cover; object-position: center; }
-    .prose img.img-h-400 { width: 100%; height: 400px; object-fit: cover; object-position: center; }
-    .prose img.img-h-500 { width: 100%; height: 500px; object-fit: cover; object-position: center; }
-    .prose img.img-left { float: left; margin: 0 1rem 1rem 0; }
-    .prose img.img-right { float: right; margin: 0 0 1rem 1rem; }
-    .prose img.img-center { display: block; margin-left: auto; margin-right: auto; }
-    .prose img.img-small { width: 33%; }
-    .prose img.img-medium { width: 66%; }
-    .prose img.img-full { width: 100%; }
-    .prose img.img-rounded { border-radius: var(--radius); }
-    /* Gradient masks for images (works on page-hero and prose) */
-    .img-fade-top { -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%); mask-image: linear-gradient(to bottom, transparent, black 10%); }
-    .img-fade-bottom { -webkit-mask-image: linear-gradient(to top, transparent, black 10%); mask-image: linear-gradient(to top, transparent, black 10%); }
-    .img-fade-both { -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); }
-    .img-fade-left { -webkit-mask-image: linear-gradient(to right, transparent, black 10%); mask-image: linear-gradient(to right, transparent, black 10%); }
-    .img-fade-right { -webkit-mask-image: linear-gradient(to left, transparent, black 10%); mask-image: linear-gradient(to left, transparent, black 10%); }
-    .img-fade-sides { -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
-    .img-fade-all {
-      -webkit-mask-image:
-        linear-gradient(to right, transparent, black 10%, black 90%, transparent),
-        linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
-      -webkit-mask-composite: source-in;
-      mask-image:
-        linear-gradient(to right, transparent, black 10%, black 90%, transparent),
-        linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
-      mask-composite: intersect;
-    }
   </style>
   <meta name="theme-color" content="{{ (site.theme and site.theme.bg) or '#0b0b0c' }}">
   {% set __accent = (site.theme and site.theme.accent) or '#7c5cff' %}
@@ -175,64 +147,8 @@
           {% if __bimg and __bimg[0] != '/' %}{% set __bimg = __baseDir ~ __bimg %}{% endif %}
           {% if __bimg %}{% set __bimg = __bimg | replace('/AiA/assets/', '/assets/') %}{% endif %}
           <figure class="page-hero">
-            {% set __fadeClass = '' %}
-            {% if block.gradient == 'top-bottom' or block.gradient == 'both' %}{% set __fadeClass = 'img-fade-both' %}
-            {% elif block.gradient == 'left-right' or block.gradient == 'sides' %}{% set __fadeClass = 'img-fade-sides' %}
-            {% elif block.gradient == 'all' %}{% set __fadeClass = 'img-fade-all' %}
-            {% endif %}
-            <img src="{{ __bimg | url }}" alt="" class="{{ __fadeClass }}" {% if block.height %}style="width: 100%; height: {{ block.height }}px; object-fit: cover; object-position: center;"{% endif %} />
-            {% if block.caption %}<figcaption class="intro">{{ block.caption }}</figcaption>{% endif %}
+            <img src="{{ __bimg | url }}" alt="" />
           </figure>
-        {% elif block.type == 'video' %}
-          {% set __poster = block.poster %}
-          {% if __poster and __poster[0] != '/' %}{% set __poster = __baseDir ~ __poster %}{% endif %}
-          {% if __poster %}{% set __poster = __poster | replace('/AiA/assets/', '/assets/') %}{% endif %}
-          {% if block.file %}
-            {% set __v = block.file %}
-            {% if __v and __v[0] != '/' and not ('://' in __v) %}{% set __v = __baseDir ~ __v %}{% endif %}
-            {% if __v %}{% set __v = __v | replace('/AiA/assets/', '/assets/') %}{% endif %}
-            <video controls {% if __poster %}poster="{{ __poster | url }}"{% endif %} style="width:100%;border-radius:12px;border:1px solid var(--border);background:var(--card);">
-              <source src="{{ __v | url }}" type="video/mp4" />
-            </video>
-          {% elif block.url %}
-            {% if 'youtube.com' in block.url or 'youtu.be' in block.url or 'vimeo.com' in block.url %}
-              {% set __embed = block.url %}
-              {% if 'youtu.be/' in __embed %}
-                {% set __id = (__embed | replace('https://youtu.be/','') | replace('http://youtu.be/','')) %}
-                {% set __embed = 'https://www.youtube.com/embed/' ~ __id %}
-              {% elif 'youtube.com/watch' in __embed %}
-                {% set __id = (__embed | replace('https://www.youtube.com/watch?v=','') | replace('https://youtube.com/watch?v=','') | replace('http://www.youtube.com/watch?v=','') | replace('http://youtube.com/watch?v=','')) %}
-                {% set __embed = 'https://www.youtube.com/embed/' ~ __id %}
-              {% elif 'youtube.com/shorts/' in __embed %}
-                {% set __id = (__embed | replace('https://www.youtube.com/shorts/','') | replace('https://youtube.com/shorts/','') | replace('http://www.youtube.com/shorts/','') | replace('http://youtube.com/shorts/','')) %}
-                {% set __embed = 'https://www.youtube.com/embed/' ~ __id %}
-              {% endif %}
-              {% if 'vimeo.com/' in __embed and not ('player.vimeo.com' in __embed) %}
-                {% set __id = (__embed | replace('https://vimeo.com/','') | replace('http://vimeo.com/','')) %}
-                {% set __embed = 'https://player.vimeo.com/video/' ~ __id %}
-              {% endif %}
-              <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;border:1px solid var(--border);background:var(--card);">
-                <iframe src="{{ __embed }}" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-              </div>
-            {% else %}
-              <video controls {% if __poster %}poster="{{ __poster | url }}"{% endif %} style="width:100%;border-radius:12px;border:1px solid var(--border);background:var(--card);">
-                <source src="{{ block.url }}" />
-              </video>
-            {% endif %}
-          {% endif %}
-          {% if block.caption %}<div class="intro">{{ block.caption }}</div>{% endif %}
-        {% elif block.type == 'gallery' and block.images and (block.images | length) %}
-          <div class="gallery">
-            {% for g in block.images %}
-              {% set __gimg = g.image %}
-              {% if __gimg and __gimg[0] != '/' %}{% set __gimg = __baseDir ~ __gimg %}{% endif %}
-              {% if __gimg %}{% set __gimg = __gimg | replace('/AiA/assets/', '/assets/') %}{% endif %}
-              <figure>
-                <img src="{{ __gimg | url }}" alt="" />
-                {% if g.caption %}<figcaption>{{ g.caption }}</figcaption>{% endif %}
-              </figure>
-            {% endfor %}
-          </div>
         {% elif block.type == 'two_column' %}
           <div class="grid-2">
             <div class="prose">{{ block.left | markdown | fixImgUrls | safe }}</div>
@@ -259,5 +175,6 @@
   </main>
 </body>
 </html>
+
 
 
