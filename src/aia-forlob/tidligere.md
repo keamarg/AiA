@@ -2,9 +2,5 @@
 title: Tidligere forløb
 layout: article.njk
 image: /assets/uploads/adobestock_426832618-large.jpeg
-intro: Indhold kommer snart.
+intro: Ingen tidligere forløb
 ---
-
-Indhold kommer snart.
-
-
