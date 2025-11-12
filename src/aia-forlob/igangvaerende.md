@@ -27,10 +27,7 @@ blocks:
       ## AiA-forløb med fokus på softwareudviklere
 
 
-      ![](/assets/uploads/adobestock_378471921-medium.jpeg)
-
-
-      {.img-center .img-full}
+      ![](/assets/uploads/adobestock_378471921-medium.jpeg){.img-center .img-full .img-h-200 .img-fade-both}
 
 
       Dette AiA-forløb undersøger, hvordan softwareudviklere tilegner sig og integrerer generativ AI i deres professionelle praksis – fra de første eksperimenter til teknologien bliver en naturlig del af udviklingsarbejdet. 
@@ -99,10 +96,7 @@ blocks:
       ## AiA-forløb med fokus på multimediedesignere
 
 
-      ![](/assets/uploads/adobestock_1547779025-medium.jpeg)
-
-
-      {.img-center .img-full}
+      ![](/assets/uploads/adobestock_1547779025-medium.jpeg){.img-center .img-full .img-h-200 .img-fade-both}
 
 
       Dette AiA-forløb undersøger, hvordan multimediedesignere kan udvikle ansvarlige og kritiske AI-kompetencer fx inden for UX/UI, digitalt design, contentproduktion og visuel kommunikation. 
@@ -164,4 +158,3 @@ blocks:
 
       Gennem forløbet genereres empiriske data, der bidrager til AiA-projektets samlede forskningsindsats på tværs af de forskellige AiA-forløb. Dataene anvendes til at udforske, hvordan ansvarlige AI-kompetencer udvikles og forankres i praksis – med afsæt i projektets “becoming”-tilgang, hvor fokus er på, hvordan fagprofessionelle gradvist bliver kompetente AI-brugere. Samtidig understøtter forløbet AiA-projektets forskning i jailbreaking og andre forstyrrelsesbaserede tilgange som metoder til at fremme kritisk refleksion, kreativitet og ansvarlighed i arbejdet med AI.
 ---
-
