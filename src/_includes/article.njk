@@ -48,7 +48,7 @@
     main { max-width: var(--content-max); margin: 2rem auto; padding: 0 1rem 3rem; }
     h1 { margin: 0 0 0.75rem; letter-spacing: -0.02em; }
     .intro { color: var(--muted); margin-bottom: 1.5rem; }
-    .page-hero { margin: 1rem 0 2rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); background: var(--card); }
+    .page-hero { margin: 1rem 0 2rem; border-radius: var(--radius); overflow: hidden; border: 0; background: transparent; position: relative; }
     .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
     .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; }
     .gallery figure { margin: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--card); }
@@ -85,6 +85,19 @@
         linear-gradient(to right, transparent, black 10%, black 90%, transparent),
         linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
       mask-composite: intersect;
+    }
+    .img-fade-radial { /* overlay only */ }
+    .page-hero.img-fade-radial::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(farthest-side at 50% 50%,
+        rgba(11,11,12,0) 55%,
+        rgba(11,11,12,0.25) 75%,
+        rgba(11,11,12,0.55) 90%,
+        var(--bg) 100%);
+      mix-blend-mode: normal;
     }
   </style>
   <meta name="theme-color" content="{{ (site.theme and site.theme.bg) or '#0b0b0c' }}">
@@ -154,13 +167,14 @@
           {% set __bimg = block.image %}
           {% if __bimg and __bimg[0] != '/' %}{% set __bimg = __baseDir ~ __bimg %}{% endif %}
           {% if __bimg %}{% set __bimg = __bimg | replace('/AiA/assets/', '/assets/') %}{% endif %}
-          <figure class="page-hero">
-            {% set __fadeClass = '' %}
-            {% if block.gradient == 'top-bottom' or block.gradient == 'both' %}{% set __fadeClass = 'img-fade-both' %}
-            {% elif block.gradient == 'left-right' or block.gradient == 'sides' %}{% set __fadeClass = 'img-fade-sides' %}
-            {% elif block.gradient == 'all' %}{% set __fadeClass = 'img-fade-all' %}
-            {% endif %}
-            <img src="{{ __bimg | url }}" alt="" class="{{ __fadeClass }}" {% if block.height %}style="width: 100%; height: {{ block.height }}px; object-fit: cover; object-position: center;"{% endif %} />
+          {% set __fadeClass = '' %}
+          {% if block.gradient == 'top-bottom' or block.gradient == 'both' %}{% set __fadeClass = 'img-fade-both' %}
+          {% elif block.gradient == 'left-right' or block.gradient == 'sides' %}{% set __fadeClass = 'img-fade-sides' %}
+          {% elif block.gradient == 'all' %}{% set __fadeClass = 'img-fade-all' %}
+          {% elif block.gradient == 'radial' %}{% set __fadeClass = 'img-fade-radial' %}
+          {% endif %}
+          <figure class="page-hero {{ __fadeClass }}">
+            <img src="{{ __bimg | url }}" alt="" {% if block.height %}style="width: 100%; height: {{ block.height }}px; object-fit: cover; object-position: center;"{% endif %} />
             {% if block.caption %}<figcaption class="intro">{{ block.caption }}</figcaption>{% endif %}
           </figure>
         {% elif block.type == 'video' %}

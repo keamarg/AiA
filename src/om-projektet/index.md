@@ -4,6 +4,7 @@ layout: section.njk
 image: ""
 intro: ""
 ---
+
 AI in Action er et praksisnært forskningsprojekt, der undersøger, hvordan ansvarlige og meningsfulde AI-kompetencer konstitueres i konkrete jobfunktioner, med et særligt fokus på små og mellemstore virksomheder. Projektet er EKs bidrag til AI-Kompetencepagten, der har som mål at udvikle ansvarlige AI-kompetencer hos 1 million danskere på tre år.
 
 Formålet med AiA er ikke blot at gøre medarbejdere i stand til at anvende AI, men at give dem indsigt i og dermed indflydelse på hvordan og hvornår AI anvendes. Projektet undersøger derfor hvordan medarbejdere igennem kritisk, og ansvarlig forståelse for AI kan udvikle handlekompetencer til at forme, bruge og stille spørgsmål ved teknologien i deres eget faglige praksisfelt.

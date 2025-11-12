@@ -62,10 +62,49 @@
     main { max-width: var(--content-max); margin: 2rem auto; padding: 0 1rem 3rem; }
     .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; }
     .gallery figure { margin: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--card); }
+    .page-hero { margin: 1rem 0 2rem; border-radius: var(--radius); overflow: hidden; border: 0; background: transparent; position: relative; }
     .page-hero img, .gallery figure img { width: 100%; height: auto; object-fit: contain; }
     .gallery figcaption { padding: 0.5rem 0.6rem; color: var(--muted); font-size: 0.9rem; }
     .prose::after { content: ""; display: block; clear: both; }
     .prose img { max-width: 100%; height: auto; }
+    /* Image fade utilities (applied on figure.page-hero) */
+    .img-fade-top { -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%); mask-image: linear-gradient(to bottom, transparent, black 10%); }
+    .img-fade-bottom { -webkit-mask-image: linear-gradient(to top, transparent, black 10%); mask-image: linear-gradient(to top, transparent, black 10%); }
+    .img-fade-both { -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); }
+    .img-fade-left { -webkit-mask-image: linear-gradient(to right, transparent, black 10%); mask-image: linear-gradient(to right, transparent, black 10%); }
+    .img-fade-right { -webkit-mask-image: linear-gradient(to left, transparent, black 10%); mask-image: linear-gradient(to left, transparent, black 10%); }
+    .img-fade-sides { -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+    .img-fade-all {
+      -webkit-mask-image:
+        linear-gradient(to right, transparent, black 10%, black 90%, transparent),
+        linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to right, transparent, black 10%, black 90%, transparent),
+        linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+      mask-composite: intersect;
+    }
+    .img-fade-radial { /* overlay only */ }
+    .page-hero.img-fade-radial::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(farthest-side at 50% 50%,
+        rgba(11,11,12,0) 55%,
+        rgba(11,11,12,0.25) 75%,
+        rgba(11,11,12,0.55) 90%,
+        var(--bg) 100%);
+      mix-blend-mode: normal;
+    }
+    .page-hero.img-fade-radial::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(160% 160% at 50% 50%, rgba(11,11,12,0) 60%, rgba(11,11,12,0.5) 85%, var(--bg) 100%);
+    }
   </style>
   <meta name="theme-color" content="{{ (site.theme and site.theme.bg) or '#0b0b0c' }}">
   {% set __accent = (site.theme and site.theme.accent) or '#7c5cff' %}
@@ -146,8 +185,14 @@
           {% set __bimg = block.image %}
           {% if __bimg and __bimg[0] != '/' %}{% set __bimg = __baseDir ~ __bimg %}{% endif %}
           {% if __bimg %}{% set __bimg = __bimg | replace('/AiA/assets/', '/assets/') %}{% endif %}
-          <figure class="page-hero">
-            <img src="{{ __bimg | url }}" alt="" />
+          {% set __fadeClass = '' %}
+          {% if block.gradient == 'top-bottom' or block.gradient == 'both' %}{% set __fadeClass = 'img-fade-both' %}
+          {% elif block.gradient == 'left-right' or block.gradient == 'sides' %}{% set __fadeClass = 'img-fade-sides' %}
+          {% elif block.gradient == 'all' %}{% set __fadeClass = 'img-fade-all' %}
+          {% elif block.gradient == 'radial' %}{% set __fadeClass = 'img-fade-radial' %}
+          {% endif %}
+          <figure class="page-hero {{ __fadeClass }}">
+            <img src="{{ __bimg | url }}" alt="" {% if block.height %}style="width: 100%; height: {{ block.height }}px; object-fit: cover; object-position: center;"{% endif %} />
           </figure>
         {% elif block.type == 'two_column' %}
           <div class="grid-2">
