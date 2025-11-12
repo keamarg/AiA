@@ -16,7 +16,7 @@ AiA’s værdigrundlag er blevet til med inspiration fra Pioneer Centre for Arti
 
 <img src="/assets/uploads/adobestock_1715447603-medium.jpeg" alt="" class="img-center img-full img-h-300 img-rounded">
 
-<br>
+<br><br>
 
 ### AI som støtte - ikke erstatning  
 
