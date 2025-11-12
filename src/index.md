@@ -2,7 +2,7 @@
 layout: layout.njk
 title: AiA
 isHome: true
-hero_heading: AiA - AI in Actiond
+hero_heading: AiA - AI in Action
 hero_text: Kunstig intelligens i anvendelse – udforskning, værktøjer og praksis.
 hero_image: /assets/uploads/aia_hero.jpeg
 footer:
