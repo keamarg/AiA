@@ -70,8 +70,18 @@ collections:
             required: false
             fields:
               - { label: Text, name: text, widget: text, required: false }
-              - { label: CTA Text, name: cta_text, widget: string, required: false }
-              - { label: CTA URL, name: cta_url, widget: string, required: false }
+              - {
+                  label: CTA Text,
+                  name: cta_text,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  label: CTA URL,
+                  name: cta_url,
+                  widget: string,
+                  required: false,
+                }
           - { label: Body, name: body, widget: markdown, required: false }
 
   # Category: Om projektet
@@ -129,7 +139,15 @@ collections:
             widget: object
             fields:
               - { label: Image, name: image, widget: image }
-              - { label: Height (px), name: height, widget: number, required: false, min: 100, max: 1200, step: 10 }
+              - {
+                  label: Height (px),
+                  name: height,
+                  widget: number,
+                  required: false,
+                  min: 100,
+                  max: 1200,
+                  step: 10,
+                }
               - label: Gradient fade
                 name: gradient
                 widget: select
@@ -267,13 +285,22 @@ collections:
               fields:
                 [
                   { label: Image, name: image, widget: image },
-                  { label: Height (px), name: height, widget: number, required: false, min: 100, max: 1200, step: 10 },
+                  {
+                    label: Height (px),
+                    name: height,
+                    widget: number,
+                    required: false,
+                    min: 100,
+                    max: 1200,
+                    step: 10,
+                  },
                   {
                     label: Gradient fade,
                     name: gradient,
                     widget: select,
                     required: false,
-                    options: ["none", "top-bottom", "left-right", "all", "radial"],
+                    options:
+                      ["none", "top-bottom", "left-right", "all", "radial"],
                     default: "none",
                   },
                   {
@@ -429,13 +456,22 @@ collections:
               fields:
                 [
                   { label: Image, name: image, widget: image },
-                  { label: Height (px), name: height, widget: number, required: false, min: 100, max: 1200, step: 10 },
+                  {
+                    label: Height (px),
+                    name: height,
+                    widget: number,
+                    required: false,
+                    min: 100,
+                    max: 1200,
+                    step: 10,
+                  },
                   {
                     label: Gradient fade,
                     name: gradient,
                     widget: select,
                     required: false,
-                    options: ["none", "top-bottom", "left-right", "all", "radial"],
+                    options:
+                      ["none", "top-bottom", "left-right", "all", "radial"],
                     default: "none",
                   },
                   {
@@ -732,16 +768,110 @@ collections:
             widget: object
             collapsed: false
             fields:
-              - { label: Background, name: bg, widget: color, default: "#0b0b0c", required: false }
-              - { label: Text, name: text, widget: color, default: "#e7e7ea", required: false }
-              - { label: Muted, name: muted, widget: color, default: "#a4a4ad", required: false }
-              - { label: Accent, name: accent, widget: color, default: "#7c5cff", required: false }
-              - { label: Card, name: card, widget: color, default: "#151518", required: false }
-              - { label: Card 2, name: card_2, widget: color, default: "#1c1c21", required: false }
-              - { label: Border, name: border, widget: color, default: "#2a2a31", required: false }
-              - { label: Font Family, name: font_family, widget: string, default: "system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif", required: false }
-              - { label: Base Font Size (px), name: font_size, widget: number, value_type: int, min: 12, max: 22, step: 1, default: 16, required: false }
-              - { label: Content Max Width (px), name: content_max_width, widget: number, value_type: int, min: 700, max: 1400, step: 10, default: 900, required: false }
-              - { label: Nav Max Width (px), name: nav_max_width, widget: number, value_type: int, min: 800, max: 1400, step: 10, default: 1100, required: false }
-              - { label: Border Radius (px), name: border_radius, widget: number, value_type: int, min: 6, max: 20, step: 1, default: 12, required: false }
-              - { label: Nav Background (color or rgba), name: nav_background, widget: string, default: "rgba(11,11,12,0.7)", required: false }
+              - {
+                  label: Background,
+                  name: bg,
+                  widget: color,
+                  default: "#0b0b0c",
+                  required: false,
+                }
+              - {
+                  label: Text,
+                  name: text,
+                  widget: color,
+                  default: "#e7e7ea",
+                  required: false,
+                }
+              - {
+                  label: Muted,
+                  name: muted,
+                  widget: color,
+                  default: "#a4a4ad",
+                  required: false,
+                }
+              - {
+                  label: Accent,
+                  name: accent,
+                  widget: color,
+                  default: "#7c5cff",
+                  required: false,
+                }
+              - {
+                  label: Card,
+                  name: card,
+                  widget: color,
+                  default: "#151518",
+                  required: false,
+                }
+              - {
+                  label: Card 2,
+                  name: card_2,
+                  widget: color,
+                  default: "#1c1c21",
+                  required: false,
+                }
+              - {
+                  label: Border,
+                  name: border,
+                  widget: color,
+                  default: "#2a2a31",
+                  required: false,
+                }
+              - {
+                  label: Font Family,
+                  name: font_family,
+                  widget: string,
+                  default: "system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+                  required: false,
+                }
+              - {
+                  label: Base Font Size (px),
+                  name: font_size,
+                  widget: number,
+                  value_type: int,
+                  min: 12,
+                  max: 22,
+                  step: 1,
+                  default: 16,
+                  required: false,
+                }
+              - {
+                  label: Content Max Width (px),
+                  name: content_max_width,
+                  widget: number,
+                  value_type: int,
+                  min: 700,
+                  max: 1400,
+                  step: 10,
+                  default: 900,
+                  required: false,
+                }
+              - {
+                  label: Nav Max Width (px),
+                  name: nav_max_width,
+                  widget: number,
+                  value_type: int,
+                  min: 800,
+                  max: 1400,
+                  step: 10,
+                  default: 1100,
+                  required: false,
+                }
+              - {
+                  label: Border Radius (px),
+                  name: border_radius,
+                  widget: number,
+                  value_type: int,
+                  min: 6,
+                  max: 20,
+                  step: 1,
+                  default: 12,
+                  required: false,
+                }
+              - {
+                  label: Nav Background (color or rgba),
+                  name: nav_background,
+                  widget: string,
+                  default: "rgba(11,11,12,0.7)",
+                  required: false,
+                }

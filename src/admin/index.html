@@ -16,14 +16,17 @@
       // Editor component: Insert aligned/sized images using markdown-it-attrs classes
       if (window.CMS) {
         // Make the preview match site theme and remove any image overlay/borders in the CMS preview iframe
-        CMS.registerPreviewStyle(`
+        CMS.registerPreviewStyle(
+          `
           :root { --bg:#0b0b0c; --text:#e7e7ea; --border:#2a2a31; --radius:12px; }
           html, body { background: var(--bg) !important; color: var(--text) !important; }
           img { background: transparent !important; border: 0 !important; box-shadow: none !important; }
           .img-rounded { border: 0 !important; border-radius: var(--radius) !important; }
           /* Ensure height utility images don't get white background */
           .img-h-200, .img-h-300, .img-h-400, .img-h-500 { background: transparent !important; }
-        `, { raw: true });
+        `,
+          { raw: true }
+        );
 
         CMS.registerEditorComponent({
           id: "aligned-image",
