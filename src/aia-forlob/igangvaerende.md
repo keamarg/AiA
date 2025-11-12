@@ -12,7 +12,7 @@ blocks:
       [Gå til AiA-forløb med fokus på multimediedesignere](#multimediedesignere)
 
 
-      \---
+      <hr>
 
 
       <a name="softwareudviklere"></a> 
@@ -24,7 +24,10 @@ blocks:
       ## AiA-forløb med fokus på softwareudviklere
 
 
-      ![](/assets/uploads/adobestock_378471921-medium.jpeg){.img-center .img-full}
+      ![](/assets/uploads/adobestock_378471921-medium.jpeg)
+
+
+      {.img-center .img-full}
 
 
       Dette AiA-forløb undersøger, hvordan softwareudviklere tilegner sig og integrerer generativ AI i deres professionelle praksis – fra de første eksperimenter til teknologien bliver en naturlig del af udviklingsarbejdet. 
@@ -93,7 +96,10 @@ blocks:
       ## AiA-forløb med fokus på multimediedesignere
 
 
-      ![](/assets/uploads/adobestock_1547779025-medium.jpeg){.img-center .img-full}
+      ![](/assets/uploads/adobestock_1547779025-medium.jpeg)
+
+
+      {.img-center .img-full}
 
 
       Dette AiA-forløb undersøger, hvordan multimediedesignere kan udvikle ansvarlige og kritiske AI-kompetencer fx inden for UX/UI, digitalt design, contentproduktion og visuel kommunikation. 
