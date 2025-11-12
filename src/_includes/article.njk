@@ -52,6 +52,7 @@
     .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
     .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; }
     .gallery figure { margin: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--card); }
+    .page-hero img, .gallery figure img { width: 100%; height: auto; object-fit: contain; }
     .gallery figcaption { padding: 0.5rem 0.6rem; color: var(--muted); font-size: 0.9rem; }
   </style>
   <meta name="theme-color" content="{{ (site.theme and site.theme.bg) or '#0b0b0c' }}">
