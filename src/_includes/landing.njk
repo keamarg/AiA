@@ -56,6 +56,15 @@
     .gallery figure { margin: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--card); }
     .page-hero img, .gallery figure img { width: 100%; height: auto; object-fit: contain; }
     .gallery figcaption { padding: 0.5rem 0.6rem; color: var(--muted); font-size: 0.9rem; }
+    /* Prose content image utilities */
+    .prose::after { content: ""; display: block; clear: both; }
+    .prose img { max-width: 100%; height: auto; }
+    .prose img.img-left { float: left; margin: 0 1rem 1rem 0; }
+    .prose img.img-right { float: right; margin: 0 0 1rem 1rem; }
+    .prose img.img-center { display: block; margin-left: auto; margin-right: auto; }
+    .prose img.img-small { width: 33%; }
+    .prose img.img-medium { width: 66%; }
+    .prose img.img-full { width: 100%; }
   </style>
   <meta name="theme-color" content="{{ (site.theme and site.theme.bg) or '#0b0b0c' }}">
   {% set __accent = (site.theme and site.theme.accent) or '#7c5cff' %}
@@ -120,7 +129,9 @@
             </div>
           </section>
         {% elif block.type == 'richtext' %}
-          {{ block.content | markdown | safe }}
+          <div class="prose">
+            {{ block.content | markdown | safe }}
+          </div>
         {% elif block.type == 'image_block' and block.image %}
           {% set __bimg = block.image %}
           {% if __bimg and __bimg[0] != '/' %}{% set __bimg = __baseDir ~ __bimg %}{% endif %}
@@ -181,8 +192,8 @@
           </div>
         {% elif block.type == 'two_column' %}
           <div class="grid-2">
-            <div>{{ block.left | markdown | safe }}</div>
-            <div>{{ block.right | markdown | safe }}</div>
+            <div class="prose">{{ block.left | markdown | safe }}</div>
+            <div class="prose">{{ block.right | markdown | safe }}</div>
           </div>
         {% elif block.type == 'cta' and block.url %}
           <p><a class="chip" href="{{ block.url }}">{{ block.label or block.text or 'Learn more' }}</a></p>
@@ -198,7 +209,9 @@
       {% if intro %}
         <div class="intro">{{ intro }}</div>
       {% endif %}
-      {{ content | safe }}
+      <div class="prose">
+        {{ content | safe }}
+      </div>
     {% endif %}
   </main>
 </body>

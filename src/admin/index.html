@@ -12,5 +12,57 @@
       window.CMS_CONFIG_PATH = 'config.yml?v=4';
     </script>
     <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+    <script>
+      // Editor component: Insert aligned/sized images using markdown-it-attrs classes
+      if (window.CMS) {
+        CMS.registerEditorComponent({
+          id: "aligned-image",
+          label: "Image (aligned)",
+          fields: [
+            { name: "src", label: "Image", widget: "image" },
+            { name: "alt", label: "Alt text", widget: "string", required: false },
+            {
+              name: "align",
+              label: "Align",
+              widget: "select",
+              options: [
+                { label: "Left", value: "left" },
+                { label: "Center", value: "center" },
+                { label: "Right", value: "right" },
+              ],
+              default: "center",
+            },
+            {
+              name: "size",
+              label: "Size",
+              widget: "select",
+              options: [
+                { label: "Small (33%)", value: "small" },
+                { label: "Medium (66%)", value: "medium" },
+                { label: "Full (100%)", value: "full" },
+              ],
+              default: "medium",
+            },
+          ],
+          pattern: /^!\[(.*?)\]\((.*?)\)\{\.(img-(left|center|right))\s+\.(img-(small|medium|full))\}/,
+          fromBlock: function (match) {
+            return {
+              alt: match[1],
+              src: match[2],
+              align: match[4],
+              size: match[6],
+            };
+          },
+          toBlock: function ({ src, alt, align = "center", size = "medium" }) {
+            if (!src) return "";
+            return `![${alt || ""}](${src}){.img-${align} .img-${size}}`;
+          },
+          toPreview: function ({ src, alt, align = "center", size = "medium" }) {
+            if (!src) return "";
+            return `<img src="${src}" alt="${alt || ""}" class="img-${align} img-${size}" />`;
+          },
+        });
+      }
+    </script>
   </body>
 </html>

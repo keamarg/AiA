@@ -1,4 +1,5 @@
 import MarkdownIt from "markdown-it";
+import markdownItAttrs from "markdown-it-attrs";
 
 export default function (eleventyConfig) {
   // Copy assets straight through (Decap uploads live here)
@@ -7,6 +8,28 @@ export default function (eleventyConfig) {
 
   // Markdown filter for Nunjucks templates (used by blocks)
   const md = new MarkdownIt({ html: true, linkify: true, breaks: false });
+  md.use(markdownItAttrs);
+  // Ensure markdown images respect pathPrefix using Eleventy's url filter
+  try {
+    const urlFilter = eleventyConfig.getFilter && eleventyConfig.getFilter("url");
+    if (urlFilter) {
+      const defaultImageRule = md.renderer.rules.image;
+      md.renderer.rules.image = function (tokens, idx, options, env, self) {
+        const token = tokens[idx];
+        const srcIndex = token.attrIndex("src");
+        if (srcIndex >= 0) {
+          const original = token.attrs[srcIndex][1];
+          token.attrs[srcIndex][1] = urlFilter(original);
+        }
+        if (defaultImageRule) {
+          return defaultImageRule(tokens, idx, options, env, self);
+        }
+        return self.renderToken(tokens, idx, options);
+      };
+    }
+  } catch (e) {
+    // no-op; fallback leaves image src untouched
+  }
   eleventyConfig.addFilter("markdown", (content) => {
     if (!content) return "";
     return md.render(content);
