@@ -6,7 +6,7 @@ image: ""
 intro: ""
 blocks: []
 ---
-<img src="/assets/uploads/adobestock_1191673414-medium.jpeg" alt="" class="img-center img-full img-h-200 img-rounded">
+<img src="/assets/uploads/adobestock_1191673414-medium.jpeg" alt="" class="img-center img-full img-h-200 img-fade-all img-rounded">
 
 ## **WP1: Aktionsforløb i virksomheder**
 
