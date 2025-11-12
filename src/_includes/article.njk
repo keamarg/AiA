@@ -75,7 +75,16 @@
     .img-fade-left { -webkit-mask-image: linear-gradient(to right, transparent, black 20%); mask-image: linear-gradient(to right, transparent, black 20%); }
     .img-fade-right { -webkit-mask-image: linear-gradient(to left, transparent, black 20%); mask-image: linear-gradient(to left, transparent, black 20%); }
     .img-fade-sides { -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); }
-    .img-fade-all { -webkit-mask-image: radial-gradient(closest-side at center, black 60%, transparent 100%); mask-image: radial-gradient(closest-side at center, black 60%, transparent 100%); }
+    .img-fade-all {
+      -webkit-mask-image:
+        linear-gradient(to right, transparent, black 15%, black 85%, transparent),
+        linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to right, transparent, black 15%, black 85%, transparent),
+        linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+      mask-composite: intersect;
+    }
   </style>
   <meta name="theme-color" content="{{ (site.theme and site.theme.bg) or '#0b0b0c' }}">
   {% set __accent = (site.theme and site.theme.accent) or '#7c5cff' %}
