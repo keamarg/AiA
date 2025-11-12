@@ -84,10 +84,13 @@ blocks:
       Forløbet genererer data, der bidrager til AiA-projektets samlede forskning i, hvordan ansvarlige AI-kompetencer opstår i praksis. Forløbet udforsker og bidrager især til den “becoming”-tilgang, der beskriver, hvordan professionelle gradvist udvikler kompetencer gennem erfaring og social læring. Samtidig bidrager det til AiA-projektets videre udforskning af forstyrrelses- og refleksionsbaserede metoder til at udvikle kritisk og ansvarlig AI-anvendelse blandt fagprofessionelle. 
 
 
-      <a name="multimediedesignere"></a> 
+      <a name="multimediedesignere">
 
 
-      <br><br>
+      ![](/assets/uploads/adobestock_430319103-medium.jpeg){.img-center .img-medium}
+
+
+      </a> 
 
 
       ## AiA-forløb med fokus på multimediedesignere
