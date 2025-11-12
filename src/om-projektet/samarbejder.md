@@ -5,9 +5,9 @@ image: null
 intro: null
 blocks:
   - type: image_block
-    gradient: top-bottom
+    gradient: none
     image: /assets/uploads/adobestock_393304265-medium.jpeg
-    height: 200
+    height: 150
   - type: richtext
     content: >-
       ## AI-Kompetencepagten
