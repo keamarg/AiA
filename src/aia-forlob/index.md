@@ -1,5 +1,5 @@
 ---
-title: AiA Forløb
+title: AiA forløb
 layout: section.njk
 image: ""
 intro: ""
