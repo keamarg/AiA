@@ -6,7 +6,7 @@ image: ""
 intro: ""
 blocks:
   - type: image_block
-    gradient: all
+    gradient: none
     image: /assets/uploads/adobestock_1593070777-medium.jpeg
     height: 300
   - type: richtext
