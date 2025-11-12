@@ -24,13 +24,13 @@ blocks:
       ## AiA-forløb med fokus på softwareudviklere
 
 
+      ![](/assets/uploads/adobestock_378471921-medium.jpeg){.img-center .img-full}
+
+
       Dette AiA-forløb undersøger, hvordan softwareudviklere tilegner sig og integrerer generativ AI i deres professionelle praksis – fra de første eksperimenter til teknologien bliver en naturlig del af udviklingsarbejdet. 
 
 
       Forløbet er gennemført af Kirsten Marie Grønborg, Lasse Vogelsang og en unavngiven underviser, der alle er undervisere på EK’s datamatiker-, it-arkitekt- eller it-sikkerhedsuddannelse i samarbejde med AiA-projektets øvrige forskergruppe. 
-
-
-      ![](/assets/uploads/adobestock_357735250-medium.jpeg){.img-center .img-full}
 
 
       <br>
@@ -93,13 +93,13 @@ blocks:
       ## AiA-forløb med fokus på multimediedesignere
 
 
+      ![](/assets/uploads/adobestock_1547779025-medium.jpeg){.img-center .img-full}
+
+
       Dette AiA-forløb undersøger, hvordan multimediedesignere kan udvikle ansvarlige og kritiske AI-kompetencer fx inden for UX/UI, digitalt design, contentproduktion og visuel kommunikation. 
 
 
       Forløbet er gennemført af Karsten Løgstrup, Heidi Topholt, Klaus Mandal Hansen og Birgitte Heide, der alle er undervisere på EK’s multimediedesignuddannelse i samarbejde med AiA-projektets øvrige forskergruppe. 
-
-
-      ![](/assets/uploads/adobestock_331107732-medium.jpeg){.img-center .img-full}
 
 
       <br>
