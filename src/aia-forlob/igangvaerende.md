@@ -8,9 +8,12 @@ intro: null
 
 [Gå til AiA-forløb med fokus på multimediedesignere](#multimediedesignere)
 
-<br><br><br>
+<br>
 
 <a name="softwareudviklere"></a> 
+
+<br><br>
+
 ## AiA-forløb med fokus på softwareudviklere
 
 Dette AiA-forløb undersøger, hvordan softwareudviklere tilegner sig og integrerer generativ AI i deres professionelle praksis – fra de første eksperimenter til teknologien bliver en naturlig del af udviklingsarbejdet. 
@@ -51,9 +54,10 @@ Forløbet skaber en tæt forbindelse mellem forskning og erhvervsliv gennem sama
 
 Forløbet genererer data, der bidrager til AiA-projektets samlede forskning i, hvordan ansvarlige AI-kompetencer opstår i praksis. Forløbet udforsker og bidrager især til den “becoming”-tilgang, der beskriver, hvordan professionelle gradvist udvikler kompetencer gennem erfaring og social læring. Samtidig bidrager det til AiA-projektets videre udforskning af forstyrrelses- og refleksionsbaserede metoder til at udvikle kritisk og ansvarlig AI-anvendelse blandt fagprofessionelle. 
 
+<a name="multimediedesignere"></a> 
+
 <br><br>
 
-<a name="multimediedesignere"></a> 
 ## AiA-forløb med fokus på multimediedesignere
 
 Dette AiA-forløb undersøger, hvordan multimediedesignere kan udvikle ansvarlige og kritiske AI-kompetencer fx inden for UX/UI, digitalt design, contentproduktion og visuel kommunikation. 
