@@ -6,18 +6,6 @@ intro: null
 blocks:
   - type: richtext
     content: >
-      ---
-
-      title: Igangværende forløb
-
-      layout: article.njk
-
-      image: ""
-
-      intro: null
-
-      ---
-
       [Gå til AiA-forløb med fokus på softwareudviklere](#softwareudviklere)
 
 
