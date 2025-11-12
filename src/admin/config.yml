@@ -656,6 +656,23 @@ collections:
                 [
                   { label: Image, name: image, widget: image },
                   {
+                    label: Height (px),
+                    name: height,
+                    widget: number,
+                    required: false,
+                    min: 100,
+                    max: 1200,
+                    step: 10,
+                  },
+                  {
+                    label: Gradient fade,
+                    name: gradient,
+                    widget: select,
+                    required: false,
+                    options: ["none", "top-bottom", "left-right", "all", "radial"],
+                    default: "none",
+                  },
+                  {
                     label: Caption,
                     name: caption,
                     widget: string,
