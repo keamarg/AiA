@@ -43,23 +43,54 @@
               ],
               default: "medium",
             },
+            {
+              name: "height",
+              label: "Height",
+              widget: "select",
+              options: [
+                { label: "Auto", value: "auto" },
+                { label: "200px", value: "200" },
+                { label: "300px", value: "300" },
+                { label: "400px", value: "400" },
+                { label: "500px", value: "500" }
+              ],
+              default: "auto"
+            },
+            {
+              name: "fade",
+              label: "Gradient fade",
+              widget: "select",
+              options: [
+                { label: "None", value: "none" },
+                { label: "Top", value: "top" },
+                { label: "Bottom", value: "bottom" },
+                { label: "Top & Bottom", value: "both" }
+              ],
+              default: "none"
+            }
           ],
-          pattern: /^!\[(.*?)\]\((.*?)\)\{\.(img-(left|center|right))\s+\.(img-(small|medium|full))\}/,
+          pattern: /^!\[(.*?)\]\((.*?)\)\{\.(img-(left|center|right))\s+\.(img-(small|medium|full))(?:\s+\.img-h-(\d+))?(?:\s+\.(img-fade-(?:top|bottom|both)))?\}/,
           fromBlock: function (match) {
             return {
               alt: match[1],
               src: match[2],
               align: match[4],
               size: match[6],
+              height: match[7] || "auto",
+              fade: (match[8] || "").replace("img-fade-","") || "none"
             };
           },
-          toBlock: function ({ src, alt, align = "center", size = "medium" }) {
+          toBlock: function ({ src, alt, align = "center", size = "medium", height = "auto", fade = "none" }) {
             if (!src) return "";
-            return `![${alt || ""}](${src}){.img-${align} .img-${size}}`;
+            const hClass = height !== "auto" ? ` .img-h-${height}` : "";
+            const fClass = fade !== "none" ? ` .img-fade-${fade}` : "";
+            return `![${alt || ""}](${src}){.img-${align} .img-${size}${hClass}${fClass}}`;
           },
-          toPreview: function ({ src, alt, align = "center", size = "medium" }) {
+          toPreview: function ({ src, alt, align = "center", size = "medium", height = "auto", fade = "none" }) {
             if (!src) return "";
-            return `<img src="${src}" alt="${alt || ""}" class="img-${align} img-${size}" />`;
+            const hClass = height !== "auto" ? ` img-h-${height}` : "";
+            const fClass = fade !== "none" ? ` img-fade-${fade}` : "";
+            return `<img src="${src}" alt="${alt || ""}" class="img-${align} img-${size}${hClass}${fClass}" />`;
           },
         });
       }

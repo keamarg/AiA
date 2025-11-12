@@ -120,6 +120,13 @@ collections:
             widget: object
             fields:
               - { label: Image, name: image, widget: image }
+              - { label: Height (px), name: height, widget: number, required: false, min: 100, max: 1200, step: 10 }
+              - label: Gradient fade
+                name: gradient
+                widget: select
+                required: false
+                options: ["none", "top", "bottom", "both"]
+                default: "none"
               - {
                   label: Caption,
                   name: caption,
@@ -251,6 +258,15 @@ collections:
               fields:
                 [
                   { label: Image, name: image, widget: image },
+                  { label: Height (px), name: height, widget: number, required: false, min: 100, max: 1200, step: 10 },
+                  {
+                    label: Gradient fade,
+                    name: gradient,
+                    widget: select,
+                    required: false,
+                    options: ["none", "top", "bottom", "both"],
+                    default: "none",
+                  },
                   {
                     label: Caption,
                     name: caption,
@@ -404,6 +420,15 @@ collections:
               fields:
                 [
                   { label: Image, name: image, widget: image },
+                  { label: Height (px), name: height, widget: number, required: false, min: 100, max: 1200, step: 10 },
+                  {
+                    label: Gradient fade,
+                    name: gradient,
+                    widget: select,
+                    required: false,
+                    options: ["none", "top", "bottom", "both"],
+                    default: "none",
+                  },
                   {
                     label: Caption,
                     name: caption,

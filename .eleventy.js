@@ -11,7 +11,8 @@ export default function (eleventyConfig) {
   md.use(markdownItAttrs);
   // Ensure markdown images respect pathPrefix using Eleventy's url filter
   try {
-    const urlFilter = eleventyConfig.getFilter && eleventyConfig.getFilter("url");
+    const urlFilter =
+      eleventyConfig.getFilter && eleventyConfig.getFilter("url");
     if (urlFilter) {
       const defaultImageRule = md.renderer.rules.image;
       md.renderer.rules.image = function (tokens, idx, options, env, self) {
