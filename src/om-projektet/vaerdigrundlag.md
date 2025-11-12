@@ -14,7 +14,7 @@ AiAs samarbejdspartnere forpligter sig til at underskrive en samarbejdsaftale, s
 
 AiA’s værdigrundlag er blevet til med inspiration fra Pioneer Centre for Artificial Intelligence, EU’s retningslinjer for pålidelig kunstig intelligens, The Copenhagen Manifesto​, World Economic Forums principper for kunstig intelligens, OECD’s principper for kunstig intelligens, UNESCO’s anbefalinger om etik i kunstig intelligens og IEEE’s etiske retningslinjer for AI og autonome systemer.
 
-<img src="/assets/uploads/adobestock_1715447603-medium.jpeg" alt="" class="img-center img-full img-h-200 img-rounded">
+<img src="/assets/uploads/adobestock_1715447603-medium.jpeg" alt="" class="img-center img-full img-h-300 img-rounded">
 
 <br><br>
 
