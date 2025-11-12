@@ -101,7 +101,13 @@ collections:
         widget: select
         options: ["article.njk", "landing.njk", "section.njk"]
         default: "article.njk"
-      - { label: Show Subnav (child links), name: show_subnav, widget: boolean, default: true, required: false }
+      - {
+          label: Show Subnav (child links),
+          name: show_subnav,
+          widget: boolean,
+          default: true,
+          required: false,
+        }
       - { label: Image, name: image, widget: image, required: false }
       - { label: Intro, name: intro, widget: text, required: false }
       - label: Blocks
@@ -241,7 +247,13 @@ collections:
         widget: select
         options: ["article.njk", "landing.njk", "section.njk"]
         default: "article.njk"
-      - { label: Show Subnav (child links), name: show_subnav, widget: boolean, default: true, required: false }
+      - {
+          label: Show Subnav (child links),
+          name: show_subnav,
+          widget: boolean,
+          default: true,
+          required: false,
+        }
       - { label: Image, name: image, widget: image, required: false }
       - { label: Intro, name: intro, widget: text, required: false }
       - label: Blocks
@@ -413,7 +425,13 @@ collections:
         widget: select
         options: ["article.njk", "landing.njk", "section.njk"]
         default: "article.njk"
-      - { label: Show Subnav (child links), name: show_subnav, widget: boolean, default: true, required: false }
+      - {
+          label: Show Subnav (child links),
+          name: show_subnav,
+          widget: boolean,
+          default: true,
+          required: false,
+        }
       - { label: Image, name: image, widget: image, required: false }
       - { label: Intro, name: intro, widget: text, required: false }
       - label: Blocks
@@ -585,7 +603,13 @@ collections:
         widget: select
         options: ["article.njk", "landing.njk", "section.njk"]
         default: "article.njk"
-      - { label: Show Subnav (child links), name: show_subnav, widget: boolean, default: true, required: false }
+      - {
+          label: Show Subnav (child links),
+          name: show_subnav,
+          widget: boolean,
+          default: true,
+          required: false,
+        }
       - { label: Image, name: image, widget: image, required: false }
       - { label: Intro, name: intro, widget: text, required: false }
       - label: Blocks
