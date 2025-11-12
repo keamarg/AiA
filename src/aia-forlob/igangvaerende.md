@@ -5,7 +5,7 @@ image: ""
 intro: null
 blocks:
   - type: richtext
-    content: >
+    content: >-
       [Gå til AiA-forløb med fokus på softwareudviklere](#softwareudviklere)
 
 
@@ -15,10 +15,13 @@ blocks:
       <br>
 
 
-      <a name="softwareudviklere"></a> 
+      <a name="softwareudviklere">
 
 
-      <br><br>
+      ![](/assets/uploads/adobestock_357735250-medium.jpeg){.img-center .img-full}
+
+
+      </a> 
 
 
       ## AiA-forløb med fokus på softwareudviklere
@@ -149,4 +152,4 @@ blocks:
 
       Gennem forløbet genereres empiriske data, der bidrager til AiA-projektets samlede forskningsindsats på tværs af de forskellige AiA-forløb. Dataene anvendes til at udforske, hvordan ansvarlige AI-kompetencer udvikles og forankres i praksis – med afsæt i projektets “becoming”-tilgang, hvor fokus er på, hvordan fagprofessionelle gradvist bliver kompetente AI-brugere. Samtidig understøtter forløbet AiA-projektets forskning i jailbreaking og andre forstyrrelsesbaserede tilgange som metoder til at fremme kritisk refleksion, kreativitet og ansvarlighed i arbejdet med AI.
 ---
-[](#softwareudviklere)
+
