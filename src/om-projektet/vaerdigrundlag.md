@@ -4,7 +4,10 @@ layout: layout.njk
 image: null
 intro: null
 ---
-Under mottoet “No humans were harmed during this research” vil AiA-projektet undersøge den nye bølge af AI-integration i arbejdslivet efter følgende principper.
+Under mottoet “No humans were harmed during this research” vil AiA-projektet undersøge den nye bølge af AI-integration i arbejdslivet efter principperne beskrevet her.
+<br>
+
+<img src="/assets/uploads/adobestock_1593070777-medium.jpeg" alt="" class="img-center img-full img-h-200 img-fade-all img-rounded">
 
 <br>
 
@@ -36,13 +39,9 @@ Vi mener, at arbejdet med AI-kompetencer er en kontinuerlig læringsproces der k
 
 Vi vil udfordre humanwashing-tendenser i AI-initiativer der på overfladen fremstiller implementeringen som menneskecentreret men som i stedet camouflerer de faktiske formål og potentielle konsekvenser. Vi vil udfordre samarbejdspartnere og interessenter til at fokusere på, hvordan AI reelt understøtter menneskers faglige værdier og trivsel.
 
-AiAs samarbejdspartnere forpligter sig til at underskrive en samarbejdsaftale, som sikrer, at både dette værdigrundlag og KEA’s retningslinjer for forskningsintegritet respekteres af alle involverede.
-
-AiA’s værdigrundlag er blevet til med inspiration fra Pioneer Centre for Artificial Intelligence, EU’s retningslinjer for pålidelig kunstig intelligens, The Copenhagen Manifesto​, World Economic Forums principper for kunstig intelligens, OECD’s principper for kunstig intelligens, UNESCO’s anbefalinger om etik i kunstig intelligens og IEEE’s etiske retningslinjer for AI og autonome systemer.
-
 <img src="/assets/uploads/adobestock_1715447603-medium.jpeg" alt="" class="img-center img-full img-h-300 img-rounded">
 
-<br><br>
+<br>
 
 AiAs samarbejdspartnere forpligter sig til at underskrive en samarbejdsaftale, som sikrer, at både dette værdigrundlag og KEA’s retningslinjer for forskningsintegritet respekteres af alle involverede.
 
