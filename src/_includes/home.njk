@@ -1,0 +1,29 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  {% set hasBlocks = blocks and (blocks | length) %}
+  {% set __baseDir = '/assets/uploads/' %}
+  {% if not hasBlocks %}
+    {% set __hero = hero_image %}
+    {% if __hero and __hero[0] != '/' %}{% set __hero = __baseDir ~ __hero %}{% endif %}
+    {% if __hero %}{% set __hero = __hero | replace('/AiA/assets/', '/assets/') %}{% endif %}
+    <section class="hero" {% if __hero %}style="background-image: url('{{ __hero | url }}');"{% endif %}>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>{{ hero_heading or title }}</h1>
+        {% if hero_text %}<p>{{ hero_text }}</p>{% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  <main>
+    {% if hasBlocks %}
+      {% include "blocks.njk" %}
+    {% else %}
+      <div class="prose">
+        {{ content | fixImgUrls | safe }}
+      </div>
+    {% endif %}
+  </main>
+{% endblock %}
+

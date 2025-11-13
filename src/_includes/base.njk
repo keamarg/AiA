@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title or site.title or "AiA" }}</title>
+  <style>
+    {% include "styles.njk" %}
+    {% block styles %}{% endblock %}
+  </style>
+  <meta name="theme-color" content="{{ (site.theme and site.theme.bg) or '#0b0b0c' }}">
+  {% set __accent = (site.theme and site.theme.accent) or '#7c5cff' %}
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='{{ __accent | replace('#','%23') }}'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      {% set __logo = site.logo %}
+      {% if __logo and __logo[0] != '/' %}{% set __logo = '/assets/uploads/' ~ __logo %}{% endif %}
+      {% if __logo %}{% set __logo = __logo | replace('/AiA/assets/', '/assets/') %}{% endif %}
+      <a class="brand" href="{{ '/' | url }}">
+        {% if __logo %}
+          <img src="{{ __logo | url }}" alt="{{ site.title or 'AiA' }}" style="height:28px;width:auto;display:block;" />
+        {% else %}
+          {{ site.title or 'AiA' }}
+        {% endif %}
+      </a>
+      <ul class="menu">
+        {% if navigation and navigation.items %}
+          {% for item in navigation.items %}
+            <li class="{% if item.children and (item.children | length) %}has-children{% endif %}">
+              <a href="{{ item.url | url }}">{{ item.label }}</a>
+              {% if item.children and (item.children | length) %}
+                <ul class="submenu">
+                  {% for child in item.children %}
+                    <li><a href="{{ child.url | url }}">{{ child.label }}</a></li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        {% else %}
+          <li><a href="{{ '/' | url }}">Home</a></li>
+          <li><a href="{{ '/posts/' | url }}">Blog</a></li>
+        {% endif %}
+      </ul>
+      <div class="nav-right">
+        <a class="chip" href="{{ '/admin/' | url }}">Admin</a>
+      </div>
+    </div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  {% if isHome and footer and (footer.text or footer.cta_url or footer.cta_text) %}
+    <footer class="site-footer" style="border-top:1px solid var(--border);">
+      <div class="nav-inner" style="max-width: var(--content-max); padding: 1.25rem 1rem; display:flex; flex-direction: column; gap: 0.75rem; align-items:center; text-align:center;">
+        <div class="intro" style="margin:0;">{{ footer.text }}</div>
+        {% if footer.cta_url %}
+          <a class="chip" href="{{ footer.cta_url | url }}">{{ footer.cta_text or 'Learn more' }}</a>
+        {% endif %}
+      </div>
+    </footer>
+  {% endif %}
+</body>
+</html>
+

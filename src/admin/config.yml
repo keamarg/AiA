@@ -99,7 +99,7 @@ collections:
       - label: Layout
         name: layout
         widget: select
-        options: ["article.njk", "landing.njk", "section.njk"]
+        options: ["article.njk", "section.njk"]
         default: "article.njk"
       - {
           label: Show Subnav (child links),
@@ -159,7 +159,7 @@ collections:
                 name: gradient
                 widget: select
                 required: false
-                options: ["none", "top-bottom", "left-right", "all", "radial"]
+                options: ["none", "top-bottom", "left-right", "all", "all-extreme"]
                 default: "none"
               - {
                   label: Caption,
@@ -245,7 +245,7 @@ collections:
       - label: Layout
         name: layout
         widget: select
-        options: ["article.njk", "landing.njk", "section.njk"]
+        options: ["article.njk", "section.njk"]
         default: "article.njk"
       - {
           label: Show Subnav (child links),
@@ -314,7 +314,7 @@ collections:
                     widget: select,
                     required: false,
                     options:
-                      ["none", "top-bottom", "left-right", "all", "radial"],
+                      ["none", "top-bottom", "left-right", "all", "all-extreme"],
                     default: "none",
                   },
                   {
@@ -423,7 +423,7 @@ collections:
       - label: Layout
         name: layout
         widget: select
-        options: ["article.njk", "landing.njk", "section.njk"]
+        options: ["article.njk", "section.njk"]
         default: "article.njk"
       - {
           label: Show Subnav (child links),
@@ -492,7 +492,7 @@ collections:
                     widget: select,
                     required: false,
                     options:
-                      ["none", "top-bottom", "left-right", "all", "radial"],
+                      ["none", "top-bottom", "left-right", "all", "all-extreme"],
                     default: "none",
                   },
                   {
@@ -601,7 +601,7 @@ collections:
       - label: Layout
         name: layout
         widget: select
-        options: ["article.njk", "landing.njk", "section.njk"]
+        options: ["article.njk", "section.njk"]
         default: "article.njk"
       - {
           label: Show Subnav (child links),
@@ -670,7 +670,7 @@ collections:
                     widget: select,
                     required: false,
                     options:
-                      ["none", "top-bottom", "left-right", "all", "radial"],
+                      ["none", "top-bottom", "left-right", "all", "all-extreme"],
                     default: "none",
                   },
                   {
@@ -777,6 +777,11 @@ collections:
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Publish Date, name: date, widget: datetime }
+      - label: Layout
+        name: layout
+        widget: select
+        options: ["post.njk"]
+        default: "post.njk"
       - { label: Body, name: body, widget: markdown }
       - { label: Featured Image, name: image, widget: image, required: false }
       - { label: Tags, name: tags, widget: hidden, default: ["post"] }

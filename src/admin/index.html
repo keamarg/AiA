@@ -90,7 +90,7 @@
                 { label: "Top/Bottom", value: "top-bottom" },
                 { label: "Left/Right", value: "left-right" },
                 { label: "All Sides", value: "all" },
-                { label: "Radial", value: "radial" },
+                { label: "All Extreme", value: "all-extreme" },
               ],
               default: "none",
             },
@@ -129,7 +129,7 @@
                   if (f === "top-bottom") fade = "top-bottom";
                   else if (f === "left-right") fade = "left-right";
                   else if (f === "all") fade = "all";
-                  else if (f === "radial") fade = "radial";
+                  else if (f === "all-extreme") fade = "all-extreme";
                 } else if (t === "img-rounded") {
                   rounded = true;
                 }
@@ -159,7 +159,7 @@
                   else if (f === "sides" || f === "left-right")
                     fade = "left-right";
                   else if (f === "all") fade = "all";
-                  else if (f === "radial") fade = "radial";
+                  else if (f === "all-extreme") fade = "all-extreme";
                 } else if (t === ".img-rounded") {
                   rounded = true;
                 }

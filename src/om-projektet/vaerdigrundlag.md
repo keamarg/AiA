@@ -1,6 +1,6 @@
 ---
 title: Værdigrundlag
-layout: layout.njk
+layout: article.njk
 image: null
 intro: null
 ---

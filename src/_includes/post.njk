@@ -1,0 +1,16 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  <main>
+    <h1>{{ title }}</h1>
+    {% if date %}
+      <div class="intro" style="margin-bottom: 1rem;">
+        <time datetime="{{ date | date('YYYY-MM-DD') }}">{{ date | date('MMMM D, YYYY') }}</time>
+      </div>
+    {% endif %}
+    <div class="prose">
+      {{ content | fixImgUrls | safe }}
+    </div>
+  </main>
+{% endblock %}
+

@@ -1,11 +1,11 @@
 ---
 title: Becoming
-layout: layout.njk
+layout: article.njk
 image: null
 intro: null
 blocks:
   - type: image_block
-    gradient: radial
+    gradient: all
     image: /assets/uploads/adobestock_351071184-large.jpeg
 ---
 

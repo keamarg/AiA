@@ -1,0 +1,20 @@
+{# Render child navigation links when current page is a parent item #}
+{% set __current = null %}
+{% set __allowSub = not (show_subnav is defined and (show_subnav == false or show_subnav == 'false')) %}
+{% if navigation and navigation.items %}
+  {% set __purl = (page.url | url) %}
+  {% set __praw = page.url %}
+  {% set __pstripped = (__praw | replace('/AiA','')) %}
+  {% for n in navigation.items %}
+    {% set __nurl = (n.url | url) %}
+    {% if __nurl == __purl or n.url == __praw or n.url == __pstripped %}{% set __current = n %}{% endif %}
+  {% endfor %}
+{% endif %}
+{% if __allowSub and __current and __current.children and (__current.children | length) %}
+  <nav class="subnav">
+    {% for c in __current.children %}
+      <a class="chip" href="{{ c.url | url }}">{{ c.label }}</a>
+    {% endfor %}
+  </nav>
+{% endif %}
+

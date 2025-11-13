@@ -1,5 +1,5 @@
 ---
-layout: layout.njk
+layout: home.njk
 title: AiA
 isHome: true
 hero_heading: AiA - AI in Action
