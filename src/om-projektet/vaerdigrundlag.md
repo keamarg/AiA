@@ -7,7 +7,7 @@ intro: null
 Under mottoet “No humans were harmed during this research” vil AiA-projektet undersøge den nye bølge af AI-integration i arbejdslivet efter principperne beskrevet her.
 <br>
 
-<img src="/assets/uploads/adobestock_1593070777-medium.jpeg" alt="" class="img-center img-full img-h-200 img-fade-all img-rounded">
+<img src="/assets/uploads/adobestock_1715447603-medium.jpeg" alt="" class="img-center img-full img-h-300 img-rounded">
 
 <br>
 
@@ -39,7 +39,9 @@ Vi mener, at arbejdet med AI-kompetencer er en kontinuerlig læringsproces der k
 
 Vi vil udfordre humanwashing-tendenser i AI-initiativer der på overfladen fremstiller implementeringen som menneskecentreret men som i stedet camouflerer de faktiske formål og potentielle konsekvenser. Vi vil udfordre samarbejdspartnere og interessenter til at fokusere på, hvordan AI reelt understøtter menneskers faglige værdier og trivsel.
 
-<img src="/assets/uploads/adobestock_1715447603-medium.jpeg" alt="" class="img-center img-full img-h-300 img-rounded">
+<br>
+
+<hr>
 
 <br>
 
