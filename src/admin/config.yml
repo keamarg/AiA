@@ -669,7 +669,8 @@ collections:
                     name: gradient,
                     widget: select,
                     required: false,
-                    options: ["none", "top-bottom", "left-right", "all", "radial"],
+                    options:
+                      ["none", "top-bottom", "left-right", "all", "radial"],
                     default: "none",
                   },
                   {

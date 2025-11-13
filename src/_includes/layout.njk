@@ -45,6 +45,19 @@
     .nav-right { margin-left: auto; display: flex; align-items: center; gap: 0.75rem; }
     .chip { padding: 0.35rem 0.6rem; background: var(--card); border: 1px solid var(--border); border-radius: 100px; color: var(--muted); font-size: 0.9rem; }
     .chip:hover { background: var(--card-2); color: white; }
+    /* Simple responsive nav */
+    @media (max-width: 640px) {
+      .nav-inner { flex-wrap: wrap; gap: 0.5rem; }
+      .brand { flex: 0 0 auto; min-width: 0; }
+      .brand img { height: 24px; max-width: 100%; }
+      .menu { flex: 1 1 100%; flex-wrap: wrap; gap: 0.5rem; min-width: 0; width: 100%; }
+      .menu > li { flex: 0 1 auto; min-width: 0; }
+      .menu > li > a { padding: 0.35rem 0.45rem; font-size: 0.85rem; }
+      .nav-right { width: 100%; justify-content: flex-end; flex: 1 1 100%; }
+    }
+    @media (max-width: 480px) {
+      .menu > li > a { font-size: 0.8rem; padding: 0.3rem 0.4rem; }
+    }
 
     /* Hero */
     .hero { position: relative; min-height: 60vh; display: grid; place-items: center; background-size: cover; background-position: center; }
@@ -63,7 +76,7 @@
     main { max-width: var(--content-max); margin: 2rem auto; padding: 0 1rem 3rem; }
     .page-hero { margin: 1rem 0 2rem; border-radius: var(--radius); overflow: hidden; border: 0; background: transparent; position: relative; }
     .subnav { margin: 0 0 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .intro { color: var(--muted); margin-bottom: 1rem; }
+    .intro { color: var(--muted); margin-bottom: 1rem; overflow-wrap: anywhere; }
     .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
     .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; }
     .gallery figure { margin: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--card); }
@@ -71,6 +84,7 @@
     .gallery figcaption { padding: 0.5rem 0.6rem; color: var(--muted); font-size: 0.9rem; }
     /* Prose content image utilities */
     .prose::after { content: ""; display: block; clear: both; }
+    .prose { overflow-wrap: anywhere; }
     .prose img { max-width: 100%; height: auto; }
     /* Height utilities */
     .prose img.img-h-200 { width: 100%; height: 200px; object-fit: cover; object-position: center; }
