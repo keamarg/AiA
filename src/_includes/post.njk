@@ -5,7 +5,7 @@
     <h1>{{ title }}</h1>
     {% if date %}
       <div class="intro" style="margin-bottom: 1rem;">
-        <time datetime="{{ date | date('YYYY-MM-DD') }}">{{ date | date('MMMM D, YYYY') }}</time>
+        <time datetime="{{ date }}">{{ date }}</time>
       </div>
     {% endif %}
     <div class="prose">
