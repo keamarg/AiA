@@ -5,8 +5,11 @@ image: null
 intro: null
 blocks:
   - type: image_block
-    gradient: all-extreme
-    image: /assets/uploads/adobestock_351071184-large.jpeg
+    gradient: none
+    image: /assets/uploads/poster_becker_icair2025-large.jpeg
+  - type: image_block
+    gradient: none
+    image: /assets/uploads/poster_icair2025-large.jpeg
 ---
 
 Indhold kommer snart.
