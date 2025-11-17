@@ -45,6 +45,6 @@ Vi vil udfordre humanwashing-tendenser i AI-initiativer der på overfladen frems
 
 <br>
 
-AiAs samarbejdspartnere forpligter sig til at underskrive en samarbejdsaftale, som sikrer, at både dette værdigrundlag og KEA’s retningslinjer for forskningsintegritet respekteres af alle involverede.
+AiAs samarbejdspartnere forpligter sig til at underskrive en samarbejdsaftale, som sikrer, at både dette værdigrundlag og EKs retningslinjer for forskningsintegritet respekteres af alle involverede.
 
 AiA’s værdigrundlag er blevet til med inspiration fra Pioneer Centre for Artificial Intelligence, EU’s retningslinjer for pålidelig kunstig intelligens, The Copenhagen Manifesto​, World Economic Forums principper for kunstig intelligens, OECD’s principper for kunstig intelligens, UNESCO’s anbefalinger om etik i kunstig intelligens og IEEE’s etiske retningslinjer for AI og autonome systemer.
