@@ -16,6 +16,7 @@ blocks:
   - type: image_block
     gradient: none
     image: /assets/uploads/screenshot-2025-08-20-at-13.21.06.png
+    image_url: https://keamarg.github.io/Code-review-simulator/
 ---
 
 Indhold kommer snart.

@@ -34,6 +34,12 @@
           fields: [
             { name: "src", label: "Image", widget: "image" },
             {
+              name: "url",
+              label: "Image URL (optional link)",
+              widget: "string",
+              required: false,
+            },
+            {
               name: "alt",
               label: "Alt text",
               widget: "string",
@@ -165,10 +171,23 @@
                 }
               });
             }
-            return { alt, src, align, size, height, fade, rounded };
+            // Extract URL from href attribute if present
+            let url = "";
+            if (raw.startsWith("<img")) {
+              const hrefMatch = raw.match(/href=["']([^"']+)["']/i);
+              url = hrefMatch ? hrefMatch[1] : "";
+            } else {
+              // Check for markdown link syntax: [![alt](src)](url)
+              const linkMatch = raw.match(/\]\(([^)]+)\)/);
+              if (linkMatch && linkMatch[1] && !linkMatch[1].match(/\.(jpg|jpeg|png|gif|webp|svg)/i)) {
+                url = linkMatch[1];
+              }
+            }
+            return { alt, src, url, align, size, height, fade, rounded };
           },
           toBlock: function ({
             src,
+            url,
             alt,
             rounded = false,
             align = "center",
@@ -182,10 +201,15 @@
             const rClass = rounded ? ` img-rounded` : "";
             const cls =
               `img-${align} img-${size}${hClass}${fClass}${rClass}`.trim();
-            return `<img src="${src}" alt="${alt || ""}" class="${cls}">`;
+            const imgTag = `<img src="${src}" alt="${alt || ""}" class="${cls}">`;
+            if (url) {
+              return `<a href="${url}">${imgTag}</a>`;
+            }
+            return imgTag;
           },
           toPreview: function ({
             src,
+            url,
             alt,
             rounded = false,
             align = "center",
@@ -197,9 +221,13 @@
             const hClass = height !== "auto" ? ` img-h-${height}` : "";
             const fClass = fade !== "none" ? ` img-fade-${fade}` : "";
             const rClass = rounded ? ` img-rounded` : "";
-            return `<img src="${src}" alt="${
+            const imgTag = `<img src="${src}" alt="${
               alt || ""
             }" class="img-${align} img-${size}${hClass}${fClass}${rClass}" />`;
+            if (url) {
+              return `<a href="${url}">${imgTag}</a>`;
+            }
+            return imgTag;
           },
         });
       }

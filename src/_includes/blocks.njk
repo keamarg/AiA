@@ -4,6 +4,9 @@
     {% set __himg = block.hero_image %}
     {% if __himg and __himg[0] != '/' %}{% set __himg = __baseDir ~ __himg %}{% endif %}
     {% if __himg %}{% set __himg = __himg | replace('/AiA/assets/', '/assets/') %}{% endif %}
+    {% if block.hero_image_url %}
+      <a href="{{ block.hero_image_url | url }}" style="display: block; text-decoration: none; color: inherit;">
+    {% endif %}
     <section class="hero" {% if __himg %}style="background-image: url('{{ __himg | url }}');"{% endif %}>
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -11,6 +14,9 @@
         {% if block.hero_text %}<p>{{ block.hero_text }}</p>{% endif %}
       </div>
     </section>
+    {% if block.hero_image_url %}
+      </a>
+    {% endif %}
   {% elif block.type == 'richtext' %}
     <div class="prose">
       {{ block.content | markdown | fixImgUrls | safe }}
@@ -26,7 +32,13 @@
     {% elif block.gradient == 'all-extreme' %}{% set __fadeClass = 'img-fade-all-extreme' %}
     {% endif %}
     <figure class="page-hero {{ __fadeClass }}">
+      {% if block.image_url %}
+        <a href="{{ block.image_url | url }}">
+      {% endif %}
       <img src="{{ __bimg | url }}" alt="" {% if block.height %}style="width: 100%; height: {{ block.height }}px; object-fit: cover; object-position: center;"{% endif %} />
+      {% if block.image_url %}
+        </a>
+      {% endif %}
       {% if block.caption %}<figcaption class="intro">{{ block.caption }}</figcaption>{% endif %}
     </figure>
   {% elif block.type == 'video' %}
@@ -76,7 +88,13 @@
         {% if __gimg and __gimg[0] != '/' %}{% set __gimg = __baseDir ~ __gimg %}{% endif %}
         {% if __gimg %}{% set __gimg = __gimg | replace('/AiA/assets/', '/assets/') %}{% endif %}
         <figure>
+          {% if g.image_url %}
+            <a href="{{ g.image_url | url }}">
+          {% endif %}
           <img src="{{ __gimg | url }}" alt="" />
+          {% if g.image_url %}
+            </a>
+          {% endif %}
           {% if g.caption %}<figcaption>{{ g.caption }}</figcaption>{% endif %}
         </figure>
       {% endfor %}

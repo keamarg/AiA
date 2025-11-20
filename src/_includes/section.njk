@@ -41,7 +41,15 @@
         {% set __img = image %}
         {% if __img and __img[0] != '/' %}{% set __img = __baseDir ~ __img %}{% endif %}
         {% if __img %}{% set __img = __img | replace('/AiA/assets/', '/assets/') %}{% endif %}
-        <figure class="page-hero"><img src="{{ __img | url }}" alt="" /></figure>
+        <figure class="page-hero">
+          {% if image_url %}
+            <a href="{{ image_url | url }}">
+          {% endif %}
+          <img src="{{ __img | url }}" alt="" />
+          {% if image_url %}
+            </a>
+          {% endif %}
+        </figure>
       {% endif %}
       {% if intro %}
         <div class="intro">{{ intro }}</div>

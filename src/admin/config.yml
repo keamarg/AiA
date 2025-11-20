@@ -63,6 +63,12 @@ collections:
               widget: image,
               required: false,
             }
+          - {
+              label: Hero Image URL (optional link),
+              name: hero_image_url,
+              widget: string,
+              required: false,
+            }
           - label: Footer
             name: footer
             widget: object
@@ -109,6 +115,12 @@ collections:
           required: false,
         }
       - { label: Image, name: image, widget: image, required: false }
+      - {
+          label: Image URL (optional link),
+          name: image_url,
+          widget: string,
+          required: false,
+        }
       - { label: Intro, name: intro, widget: text, required: false }
       - label: Blocks
         name: blocks
@@ -136,6 +148,12 @@ collections:
                   widget: image,
                   required: false,
                 }
+              - {
+                  label: Hero Image URL (optional link),
+                  name: hero_image_url,
+                  widget: string,
+                  required: false,
+                }
           - label: Rich text
             name: richtext
             widget: object
@@ -146,6 +164,12 @@ collections:
             widget: object
             fields:
               - { label: Image, name: image, widget: image }
+              - {
+                  label: Image URL (optional link),
+                  name: image_url,
+                  widget: string,
+                  required: false,
+                }
               - {
                   label: Height (px),
                   name: height,
@@ -191,6 +215,12 @@ collections:
                   required: false,
                 }
               - {
+                  label: Poster Image URL (optional link),
+                  name: poster_url,
+                  widget: string,
+                  required: false,
+                }
+              - {
                   label: Caption,
                   name: caption,
                   widget: string,
@@ -205,6 +235,12 @@ collections:
                 widget: list
                 fields:
                   - { label: Image, name: image, widget: image }
+                  - {
+                      label: Image URL (optional link),
+                      name: image_url,
+                      widget: string,
+                      required: false,
+                    }
                   - {
                       label: Caption,
                       name: caption,
@@ -256,6 +292,12 @@ collections:
           required: false,
         }
       - { label: Image, name: image, widget: image, required: false }
+      - {
+          label: Image URL (optional link),
+          name: image_url,
+          widget: string,
+          required: false,
+        }
       - { label: Intro, name: intro, widget: text, required: false }
       - label: Blocks
         name: blocks
@@ -300,6 +342,12 @@ collections:
               fields:
                 [
                   { label: Image, name: image, widget: image },
+                  {
+                    label: Image URL (optional link),
+                    name: image_url,
+                    widget: string,
+                    required: false,
+                  },
                   {
                     label: Height (px),
                     name: height,
@@ -440,6 +488,12 @@ collections:
           required: false,
         }
       - { label: Image, name: image, widget: image, required: false }
+      - {
+          label: Image URL (optional link),
+          name: image_url,
+          widget: string,
+          required: false,
+        }
       - { label: Intro, name: intro, widget: text, required: false }
       - label: Blocks
         name: blocks
@@ -484,6 +538,12 @@ collections:
               fields:
                 [
                   { label: Image, name: image, widget: image },
+                  {
+                    label: Image URL (optional link),
+                    name: image_url,
+                    widget: string,
+                    required: false,
+                  },
                   {
                     label: Height (px),
                     name: height,
@@ -624,6 +684,12 @@ collections:
           required: false,
         }
       - { label: Image, name: image, widget: image, required: false }
+      - {
+          label: Image URL (optional link),
+          name: image_url,
+          widget: string,
+          required: false,
+        }
       - { label: Intro, name: intro, widget: text, required: false }
       - label: Blocks
         name: blocks
@@ -668,6 +734,12 @@ collections:
               fields:
                 [
                   { label: Image, name: image, widget: image },
+                  {
+                    label: Image URL (optional link),
+                    name: image_url,
+                    widget: string,
+                    required: false,
+                  },
                   {
                     label: Height (px),
                     name: height,
@@ -803,6 +875,12 @@ collections:
         default: "post.njk"
       - { label: Body, name: body, widget: markdown }
       - { label: Featured Image, name: image, widget: image, required: false }
+      - {
+          label: Featured Image URL (optional link),
+          name: image_url,
+          widget: string,
+          required: false,
+        }
       - { label: Tags, name: tags, widget: hidden, default: ["post"] }
 
   # Settings
