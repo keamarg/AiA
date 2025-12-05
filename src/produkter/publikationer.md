@@ -5,6 +5,9 @@ image: null
 intro: null
 blocks:
   - type: richtext
+    content: "F*ck Around and Find Out: Quasi-Malicious Interactions with LLMs as a
+      Site of Situated LearningONeill, S. (2025)Læs publikationen "
+  - type: richtext
     content: >-
       ## Posters og work in progress papers til ICAIR
 
@@ -17,10 +20,12 @@ blocks:
     gradient: none
     image: /assets/uploads/poster_icair2025-large.jpeg
     content: >-
-      ## Posters og work in progress papers til ICAIR
+      F*ck Around and Find Out: Quasi-Malicious Interactions with LLMs as a Site
+      of Situated Learning
 
+      ONeill, S. (2025)
 
-      *5th International Conference on AI Research, 11 - 12 December 2025, University of Genoa, Italy*
+      [Læs publikationen ](<>)
 ---
 
 Indhold kommer snart.
