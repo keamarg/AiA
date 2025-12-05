@@ -59,10 +59,6 @@
         {
           "label": "Becoming",
           "url": "/begreber-og-fokusomraader/becoming/"
-        },
-        {
-          "label": "Artefakter",
-          "url": "/begreber-og-fokusomraader/artefakter/"
         }
       ]
     },
@@ -75,8 +71,8 @@
           "url": "/produkter/publikationer/"
         },
         {
-          "label": "Research tools",
-          "url": "/produkter/research-tools/"
+          "label": "Research probes",
+          "url": "/produkter/research-probes/"
         },
         {
           "label": "Events",
