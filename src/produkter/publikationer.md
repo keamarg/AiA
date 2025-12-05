@@ -5,8 +5,12 @@ image: null
 intro: null
 blocks:
   - type: richtext
-    content: "F*ck Around and Find Out: Quasi-Malicious Interactions with LLMs as a
-      Site of Situated LearningONeill, S. (2025)Læs publikationen "
+    content: >-
+      F*ck Around and Find Out: Quasi-Malicious Interactions with LLMs as a Site
+      of Situated LearningONeill, S. (2025)
+
+
+      [Læs publikationen ](https://acl-bg.org/proceedings/2025/OMMM%202025/pdf/2025.ranlpommm-1.6.pdf)
   - type: richtext
     content: >-
       ## Posters og work in progress papers til ICAIR
