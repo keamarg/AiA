@@ -60,6 +60,8 @@ blocks:
       #### 4) Workshops: Deling af erfaringer i praksis
 
 
+      [Kirsten Marie Grønborg](<>) \
+
       I denne del af forløbet samles praktiserende softwareudviklere for at dele konkrete erfaringer med brugen af generativ AI i deres arbejde. Gennem åbne samtaler og faciliterede øvelser diskuteres både god og problematisk AI-brug – fra effektivisering og produktivitet til spørgsmål om kvalitet, faglighed og ansvar. 
 
 
