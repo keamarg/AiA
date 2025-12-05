@@ -1,5 +1,5 @@
 ---
-title: Research tools
+title: Research probes
 layout: article.njk
 image: ""
 intro: null
