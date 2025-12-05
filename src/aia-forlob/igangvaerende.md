@@ -66,7 +66,7 @@ blocks:
       Formålet er at skabe et rum for gensidig læring og refleksion, hvor deltagerne kan sammenligne praksisser, opdage blinde vinkler og inspirere hinanden til mere ansvarlige og bæredygtige måder at anvende AI på i deres fag. 
 
 
-      Ansvarlig: [Kirsten Marie Grønborg](https://www.ek.dk/kontakt/medarbejdere/kmg) 
+      Ansvarlig: **[Kirsten Marie Grønborg](https://www.ek.dk/kontakt/medarbejdere/kmg)** 
 
 
       ### Kobling til uddannelse
