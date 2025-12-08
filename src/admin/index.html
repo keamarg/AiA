@@ -179,7 +179,11 @@
             } else {
               // Check for markdown link syntax: [![alt](src)](url)
               const linkMatch = raw.match(/\]\(([^)]+)\)/);
-              if (linkMatch && linkMatch[1] && !linkMatch[1].match(/\.(jpg|jpeg|png|gif|webp|svg)/i)) {
+              if (
+                linkMatch &&
+                linkMatch[1] &&
+                !linkMatch[1].match(/\.(jpg|jpeg|png|gif|webp|svg)/i)
+              ) {
                 url = linkMatch[1];
               }
             }
@@ -201,7 +205,9 @@
             const rClass = rounded ? ` img-rounded` : "";
             const cls =
               `img-${align} img-${size}${hClass}${fClass}${rClass}`.trim();
-            const imgTag = `<img src="${src}" alt="${alt || ""}" class="${cls}">`;
+            const imgTag = `<img src="${src}" alt="${
+              alt || ""
+            }" class="${cls}">`;
             if (url) {
               return `<a href="${url}">${imgTag}</a>`;
             }

@@ -258,7 +258,12 @@ collections:
             widget: object
             fields:
               - { label: Text, name: text, widget: string }
-              - { label: URL, name: url, widget: string }
+              - {
+                  label: URL,
+                  name: url,
+                  widget: string,
+                  hint: "Tip: Check Settings → Navigation for correct page URLs. Internal links should match file names (e.g., /produkter/research-probes/ for research-probes.md)",
+                }
               - {
                   label: Label (optional),
                   name: label,
@@ -452,7 +457,7 @@ collections:
               fields:
                 [
                   { label: Text, name: text, widget: string },
-                  { label: URL, name: url, widget: string },
+                  { label: URL, name: url, widget: internal-link },
                   {
                     label: Label (optional),
                     name: label,
@@ -648,7 +653,7 @@ collections:
               fields:
                 [
                   { label: Text, name: text, widget: string },
-                  { label: URL, name: url, widget: string },
+                  { label: URL, name: url, widget: internal-link },
                   {
                     label: Label (optional),
                     name: label,
@@ -844,7 +849,7 @@ collections:
               fields:
                 [
                   { label: Text, name: text, widget: string },
-                  { label: URL, name: url, widget: string },
+                  { label: URL, name: url, widget: internal-link },
                   {
                     label: Label (optional),
                     name: label,
@@ -897,14 +902,24 @@ collections:
             collapsed: false
             fields:
               - { label: Label, name: label, widget: string }
-              - { label: URL, name: url, widget: string }
+              - {
+                  label: URL,
+                  name: url,
+                  widget: string,
+                  hint: "URL must match the actual page file name (e.g., /produkter/research-tools/ for research-tools.md). Do NOT include /AiA prefix.",
+                }
               - label: Children
                 name: children
                 widget: list
                 required: false
                 fields:
                   - { label: Label, name: label, widget: string }
-                  - { label: URL, name: url, widget: string }
+                  - {
+                      label: URL,
+                      name: url,
+                      widget: string,
+                      hint: "URL must match the actual page file name (e.g., /om-projektet/kontakt/ for kontakt.md). Do NOT include /AiA prefix.",
+                    }
       - file: "src/_data/site.json"
         label: Site
         name: site
