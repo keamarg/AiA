@@ -7,28 +7,20 @@ blocks:
   - type: richtext
     content: >-
       #### F*ck Around and Find Out: Quasi-Malicious Interactions with LLMs as a
-      Site of Situated Learning. O'Neill, S. (2025)
-
-
-      [🔗 Læs publikationen ](https://acl-bg.org/proceedings/2025/OMMM%202025/pdf/2025.ranlpommm-1.6.pdf)
+      Site of Situated Learning. O'Neill, S. (2025) [🔗 Læs publikationen
+      ](https://acl-bg.org/proceedings/2025/OMMM%202025/pdf/2025.ranlpommm-1.6.pdf)
 
 
       [](https://acl-bg.org/proceedings/2025/OMMM%202025/pdf/2025.ranlpommm-1.6.pdf)
 
 
-      #### Vibe Coding a Research Probe for Exploring AI/Voice Based Code Reviews. Gundtoft, M. (2025)
-
-
-      [🔗 Læs publikationen ](https://papers.academic-conferences.org/index.php/icair/article/view/3975)
+      #### Vibe Coding a Research Probe for Exploring AI/Voice Based Code Reviews. Gundtoft, M. (2025) [🔗 Læs publikationen ](https://papers.academic-conferences.org/index.php/icair/article/view/3975)
 
 
       [](https://papers.academic-conferences.org/index.php/icair/article/view/3975)
 
 
-      #### Becoming a Generative AI User: Social Learning and Responsible Engagement in Software Development. Boesen, M., O'Neill, S. (2025)
-
-
-      [🔗 Læs publikationen ](https://papers.academic-conferences.org/index.php/icair/article/view/4239)
+      #### Becoming a Generative AI User: Social Learning and Responsible Engagement in Software Development. Boesen, M., O'Neill, S. (2025) [🔗 Læs publikationen ](https://papers.academic-conferences.org/index.php/icair/article/view/4239)
 
 
       [](https://papers.academic-conferences.org/index.php/icair/article/view/4239)
