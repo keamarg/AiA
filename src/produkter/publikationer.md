@@ -29,6 +29,9 @@ blocks:
 
 
       [🔗 Læs publikationen ](https://papers.academic-conferences.org/index.php/icair/article/view/4239)
+
+
+      [](https://papers.academic-conferences.org/index.php/icair/article/view/4239)
   - type: richtext
     content: >-
       ## Posters og work in progress papers til ICAIR
