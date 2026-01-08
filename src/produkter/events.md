@@ -11,7 +11,7 @@ blocks:
       #### ICAIR Conference - Genoa 11/12-12/12
 
 
-      I december 2025 var AiA til 5th [](<>)International Conference on AI Research i Genoa sammen med adjunkt og deltager i projektet "Becoming a Generative AI user", Kirsten Marie Grønborg.
+      I december 2025 var AiA til 5th International Conference on AI Research i Genoa sammen med adjunkt og deltager i projektet "Becoming a Generative AI user", Kirsten Marie Grønborg.
 
 
       Vi havde bidrag med i form af to [work-in-progress papers og posters](<>), og Sarah O'Neill var chair i tracket: *AI and Ethical Norms: Rethinking Rights, Justice, and Responsibility in the Algorithmic Age*
