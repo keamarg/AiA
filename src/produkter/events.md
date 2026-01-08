@@ -30,7 +30,7 @@ blocks:
   - type: video
     file: /assets/uploads/aia_genoa.mp4
     content: "#### ICAIR Conference - Genoa 11/12-12/12"
-    caption: Skabt med Veo 3.1
+    caption: "Foto: Kirsten Marie Grønborg (videoklip skabt med Veo 3.1)"
 ---
 
 Indhold kommer snart.
